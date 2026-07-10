@@ -1,0 +1,567 @@
+/**
+ * Multilingual dictionary + language switcher
+ * Languages: en | zh | ja
+ */
+(function () {
+  "use strict";
+
+  const STORAGE_KEY = "hf-lang";
+  const SUPPORTED = ["en", "zh", "ja"];
+
+  const dict = {
+    en: {
+      skip: "Skip to content",
+      brand: "Haowei Fan",
+      brandZh: "Haowei Fan",
+      "nav.about": "About",
+      "nav.experience": "Experience",
+      "nav.education": "Education",
+      "nav.publications": "Publications",
+      "nav.projects": "Projects",
+      "nav.skills": "Skills",
+      "nav.achievements": "Achievements",
+      "nav.contact": "Contact",
+      menuToggle: "Open menu",
+      themeToggle: "Toggle light / dark theme",
+
+      "hero.eyebrow": "PhD Candidate · Private Equity Research Intern",
+      "hero.name": "Haowei Fan",
+      "hero.subtitle":
+        "Investment research · Analytical rigor · From physics to private equity",
+      "hero.lead":
+        "Third-year PhD in Theoretical Physics, graduating next year. Currently interning in private equity research — building toward a career in PE and investment research.",
+      "hero.ctaProjects": "View Projects",
+      "hero.ctaContact": "Get in Touch",
+
+      "about.label": "About",
+      "about.title": "Profile",
+      "about.body":
+        "I am a third-year PhD candidate in Theoretical Physics (expected graduation next year), with a background in stochastic processes, high-performance scientific computing, and large-scale Python/MATLAB modeling. I recently joined a private equity firm as a research intern, working on PE-related research. My training has built strong skills in structured analysis, complex problem-solving, and turning data and models into clear conclusions — capabilities I now apply to industry and investment research. Looking ahead, I am keen to grow in private equity and related investment research roles.",
+
+      "experience.label": "Career",
+      "experience.title": "Experience",
+      "exp.ngi.date": "June 2025 – November 2025",
+      "exp.ngi.role": "Visiting Scholar",
+      "exp.ngi.org": "National Graphene Institute, UK",
+      "exp.ngi.b1":
+        "Investigated the relation and distinction between quantum and classical chaos in a periodically driven dissipative spin model.",
+      "exp.ngi.b2":
+        "Built computational models for tetralayer graphene incorporating self-consistent Hartree potentials.",
+      "exp.ngi.b3":
+        "Studied different Hartree corrections for two-dimensional systems theoretically.",
+      "exp.pwc.date": "August 2021 – July 2022",
+      "exp.pwc.role": "Audit",
+      "exp.pwc.org": "PwC Shanghai",
+      "exp.pwc.b1":
+        "Performed statistical sampling, analytical review, and large-scale data validation for public and private fund clients.",
+      "exp.pwc.b2":
+        "Evaluated risk-control and compliance frameworks, gaining exposure to financial reporting and regulatory processes.",
+      "exp.pwc.b3":
+        "Collaborated with cross-functional teams to deliver data-driven audit assessments.",
+
+      "education.label": "Academic",
+      "education.title": "Education",
+      "edu.phd.degree": "PhD in Theoretical Physics",
+      "edu.phd.school": "City University of Hong Kong",
+      "edu.msc.degree": "MSc in Applied Physics (Distinction)",
+      "edu.msc.school": "City University of Hong Kong",
+      "edu.bsc.degree": "BSc in Applied Chemistry (First Class)",
+      "edu.bsc.school": "Tongji University",
+
+      "publications.label": "Research",
+      "publications.title": "Publications",
+      "publications.view": "View on arXiv →",
+
+      "projects.label": "Selected Work",
+      "projects.title": "Projects",
+      "proj.chaos.title": "Chaos in Periodically Driven Dissipative Spin Systems",
+      "proj.chaos.tag": "Quantum Dynamics · HPC",
+      "proj.chaos.b1":
+        "Compared quantum and classical chaos in a periodically driven dissipative spin model.",
+      "proj.chaos.b2":
+        "Computed Lyapunov exponents; contrasted thermodynamic classical limits with finite-size quantum behaviour.",
+      "proj.chaos.b3":
+        "Implemented large-scale matrix evolution and parallelized Python/MATLAB simulations.",
+      "proj.mient.title": "Measurement-Induced Entanglement Transition",
+      "proj.mient.tag": "Free Fermions · Stochastic Dynamics",
+      "proj.mient.b1":
+        "Studied entanglement transitions in free-fermion chains under Brownian-noise stochastic Schrödinger evolution.",
+      "proj.mient.b2":
+        "Analysed volume-law vs area-law bipartite entropy as measurement and potential strength vary.",
+      "proj.mient.b3":
+        "Built numerical solvers for stochastic differential equations and random dynamical evolution.",
+      "proj.graphene.title": "Tetralayer Graphene Hartree Modelling",
+      "proj.graphene.tag": "Self-Consistent Field · Materials",
+      "proj.graphene.b1":
+        "Built computational models for four-layer graphene with self-consistent Hartree potentials.",
+      "proj.graphene.b2":
+        "Solved layer-dependent potentials and electronic structure under iterative SCF frameworks.",
+      "proj.graphene.b3":
+        "Developed iterative self-consistent optimization algorithms for complex multiparameter systems.",
+
+      "skills.label": "Toolkit",
+      "skills.title": "Skills",
+      "skills.prog": "Programming",
+      "skills.math": "Mathematics",
+      "skills.lang": "Languages",
+      "skills.math.prob": "Probability",
+      "skills.math.stoch": "Stochastic calculus",
+      "skills.math.num": "Numerical analysis",
+      "skills.math.la": "Linear algebra",
+      "skills.math.game": "Game theory",
+      "skills.lang.zh": "Mandarin",
+      "skills.lang.en": "English",
+      "skills.lang.sh": "Shanghainese",
+      "skills.lang.yue": "Cantonese",
+      "skills.lang.ja": "Japanese",
+
+      "teaching.label": "Community",
+      "teaching.title": "Teaching & Conferences",
+      "teaching.ta": "Teaching Assistant",
+      "teaching.conf": "Conferences",
+      "teaching.t1": "Introductory Classical Mechanics",
+      "teaching.t2": "Foundation Physics",
+      "teaching.t3": "Foundation Physics, General Physics I",
+      "teaching.c1":
+        "Joint Annual Conference of Physical Societies in Guangdong–Hong Kong–Macao Greater Bay Area · CityU Hong Kong",
+      "teaching.c2":
+        "Department of Physics & Astronomy Postgraduate Research Conference · University of Manchester, UK",
+
+      "achievements.label": "Highlights",
+      "achievements.title": "Achievements & Certificates",
+      "ach.cube.title": "Rubik’s Cube",
+      "ach.cube.body":
+        "3 Asian records and 11 national records; 48 gold, 21 silver, and 24 bronze medals in WCA competitions — pattern recognition, problem-solving, and cognitive agility under pressure.",
+      "ach.cube.link": "WCA Profile →",
+      "ach.cert.title": "Certificates",
+      "ach.cert.cfa": "CFA Sustainable Investment Certificate (ESG)",
+      "ach.cert.sac": "Securities Qualification Certificate (SAC)",
+
+      "contact.label": "Connect",
+      "contact.title": "Contact",
+      "contact.desc":
+        "Open to conversations about private equity, investment research, and related opportunities.",
+      "contact.email": "Email",
+      "contact.linkedin": "Haowei Fan",
+      "contact.form.name": "Name",
+      "contact.form.email": "Your email",
+      "contact.form.message": "Message",
+      "contact.form.submit": "Send Message",
+      "contact.form.mailto": "Email directly",
+      "contact.form.placeholder":
+        "The form is not connected yet. Please email hwfan0930@gmail.com — thanks for reaching out!",
+      "contact.form.validation": "Please fill in all fields with a valid email.",
+      "contact.form.errName": "Please enter your name.",
+      "contact.form.errEmail": "Please enter a valid email address.",
+      "contact.form.errMessage": "Please enter a message.",
+
+      "footer.copy": "© 2026 Haowei Fan. All rights reserved.",
+      "footer.updated": "Last updated: July 2026",
+      documentTitle: "Haowei Fan · Personal Homepage",
+    },
+
+    zh: {
+      skip: "跳到主要内容",
+      brand: "樊浩玮",
+      brandZh: "樊浩玮",
+      "nav.about": "简介",
+      "nav.experience": "经历",
+      "nav.education": "教育",
+      "nav.publications": "论文",
+      "nav.projects": "项目",
+      "nav.skills": "技能",
+      "nav.achievements": "成就",
+      "nav.contact": "联系",
+      menuToggle: "打开菜单",
+      themeToggle: "切换浅色 / 深色主题",
+
+      "hero.eyebrow": "博士研究生 · 私募股权研究实习生",
+      "hero.name": "樊浩玮",
+      "hero.subtitle": "投资研究 · 分析与判断 · 从物理到私募股权",
+      "hero.lead":
+        "理论物理博士三年级，预计明年毕业。近期加入私募股权投资公司从事 PE 研究实习，希望在私募股权与投资研究方向长期发展。",
+      "hero.ctaProjects": "查看项目",
+      "hero.ctaContact": "联系我",
+
+      "about.label": "关于",
+      "about.title": "个人简介",
+      "about.body":
+        "我是理论物理博士三年级学生，预计明年毕业，研究背景涵盖随机过程、高性能科学计算与大规模 Python / MATLAB 建模。近期加入一家私募股权投资公司，从事私募股权相关研究实习。博士训练塑造了结构化分析、复杂问题拆解，以及从数据与模型中提炼清晰结论的能力，我正将这些能力应用到行业与投资研究中。未来希望在私募股权及投资研究相关方向持续深耕。",
+
+      "experience.label": "职业",
+      "experience.title": "工作经历",
+      "exp.ngi.date": "2025 年 6 月 – 2025 年 11 月",
+      "exp.ngi.role": "访问学者",
+      "exp.ngi.org": "英国国家石墨烯研究所（National Graphene Institute）",
+      "exp.ngi.b1":
+        "研究周期性驱动耗散自旋模型中量子混沌与经典混沌的关联与区别。",
+      "exp.ngi.b2":
+        "构建包含自洽 Hartree 势的四层石墨烯计算模型。",
+      "exp.ngi.b3":
+        "从理论上研究二维体系中不同形式的 Hartree 修正。",
+      "exp.pwc.date": "2021 年 8 月 – 2022 年 7 月",
+      "exp.pwc.role": "审计",
+      "exp.pwc.org": "普华永道上海",
+      "exp.pwc.b1":
+        "面向公募与私募基金客户开展统计抽样、分析性复核与大规模数据验证。",
+      "exp.pwc.b2":
+        "评估风险控制与合规框架，积累财务报告与监管流程相关经验。",
+      "exp.pwc.b3":
+        "与跨职能团队协作，交付数据驱动的审计评估。",
+
+      "education.label": "学术",
+      "education.title": "教育背景",
+      "edu.phd.degree": "理论物理博士（在读）",
+      "edu.phd.school": "香港城市大学",
+      "edu.msc.degree": "应用物理硕士（Distinction）",
+      "edu.msc.school": "香港城市大学",
+      "edu.bsc.degree": "应用化学学士（First Class）",
+      "edu.bsc.school": "同济大学",
+
+      "publications.label": "研究",
+      "publications.title": "学术论文",
+      "publications.view": "在 arXiv 查看 →",
+
+      "projects.label": "精选",
+      "projects.title": "项目",
+      "proj.chaos.title": "周期性驱动耗散自旋系统中的混沌",
+      "proj.chaos.tag": "量子动力学 · 高性能计算",
+      "proj.chaos.b1":
+        "比较周期性驱动耗散自旋模型中量子与经典混沌的关系与差异。",
+      "proj.chaos.b2":
+        "计算 Lyapunov 指数，对比热力学经典极限与有限尺寸量子行为。",
+      "proj.chaos.b3":
+        "在 Python / MATLAB 中实现大规模矩阵演化与并行随机动力学模拟。",
+      "proj.mient.title": "测量诱导纠缠相变",
+      "proj.mient.tag": "自由费米子 · 随机动力学",
+      "proj.mient.b1":
+        "研究在布朗噪声驱动的随机薛定谔演化下，自由费米子链中的纠缠相变。",
+      "proj.mient.b2":
+        "分析二分纠缠熵在测量强度与势强度变化下的体律 / 面律转变。",
+      "proj.mient.b3":
+        "开发随机微分方程与随机动力学演化的数值求解器。",
+      "proj.graphene.title": "四层石墨烯 Hartree 自洽建模",
+      "proj.graphene.tag": "自洽场 · 材料计算",
+      "proj.graphene.b1":
+        "构建包含自洽 Hartree 势的四层石墨烯计算模型。",
+      "proj.graphene.b2":
+        "在迭代自洽场框架下求解层依赖势与电子结构。",
+      "proj.graphene.b3":
+        "发展面向复杂多参数系统的迭代自洽优化算法。",
+
+      "skills.label": "能力",
+      "skills.title": "技能",
+      "skills.prog": "编程",
+      "skills.math": "数学",
+      "skills.lang": "语言",
+      "skills.math.prob": "概率论",
+      "skills.math.stoch": "随机微积分",
+      "skills.math.num": "数值分析",
+      "skills.math.la": "线性代数",
+      "skills.math.game": "博弈论",
+      "skills.lang.zh": "普通话",
+      "skills.lang.en": "英语",
+      "skills.lang.sh": "上海话",
+      "skills.lang.yue": "粤语",
+      "skills.lang.ja": "日语",
+
+      "teaching.label": "社区",
+      "teaching.title": "教学与会议",
+      "teaching.ta": "助教经历",
+      "teaching.conf": "学术会议",
+      "teaching.t1": "经典力学导论",
+      "teaching.t2": "基础物理",
+      "teaching.t3": "基础物理、普通物理 I",
+      "teaching.c1":
+        "粤港澳大湾区物理学会联合年会 · 香港城市大学",
+      "teaching.c2":
+        "物理与天文学系研究生研究会议 · 英国曼彻斯特大学",
+
+      "achievements.label": "亮点",
+      "achievements.title": "成就与证书",
+      "ach.cube.title": "魔方",
+      "ach.cube.body":
+        "3 项亚洲纪录、11 项国家纪录；WCA 赛事累计 48 金、21 银、24 铜——展现模式识别、问题解决与高压下的认知敏捷。",
+      "ach.cube.link": "WCA 个人主页 →",
+      "ach.cert.title": "证书",
+      "ach.cert.cfa": "CFA 可持续投资证书（ESG）",
+      "ach.cert.sac": "证券从业资格证书（SAC）",
+
+      "contact.label": "联系",
+      "contact.title": "与我联系",
+      "contact.desc":
+        "欢迎就私募股权、投资研究及相关机会交流。",
+      "contact.email": "邮箱",
+      "contact.linkedin": "樊浩玮",
+      "contact.form.name": "姓名",
+      "contact.form.email": "你的邮箱",
+      "contact.form.message": "留言",
+      "contact.form.submit": "发送",
+      "contact.form.mailto": "直接发邮件",
+      "contact.form.placeholder":
+        "表单暂未接入后端。请直接发邮件至 hwfan0930@gmail.com，感谢联系！",
+      "contact.form.validation": "请填写完整信息，并使用有效邮箱地址。",
+      "contact.form.errName": "请填写姓名。",
+      "contact.form.errEmail": "请填写有效的邮箱地址。",
+      "contact.form.errMessage": "请填写留言内容。",
+
+      "footer.copy": "© 2026 樊浩玮. 保留所有权利。",
+      "footer.updated": "最近更新：2026 年 7 月",
+      documentTitle: "樊浩玮 · 个人主页",
+    },
+
+    ja: {
+      skip: "メインコンテンツへスキップ",
+      brand: "樊浩玮",
+      brandZh: "樊浩玮",
+      "nav.about": "概要",
+      "nav.experience": "経歴",
+      "nav.education": "学歴",
+      "nav.publications": "論文",
+      "nav.projects": "プロジェクト",
+      "nav.skills": "スキル",
+      "nav.achievements": "実績",
+      "nav.contact": "連絡先",
+      menuToggle: "メニューを開く",
+      themeToggle: "ライト / ダークテーマを切り替え",
+
+      "hero.eyebrow": "博士課程 · プライベート・エクイティ研究インターン",
+      "hero.name": "樊浩玮",
+      "hero.subtitle":
+        "投資リサーチ · 分析力 · 物理学からPEへ",
+      "hero.lead":
+        "理論物理学博士課程3年目、来年修了予定。最近、プライベート・エクイティ投資会社でPE研究インターンとして働き始め、今後はこの分野でのキャリアを目指しています。",
+      "hero.ctaProjects": "プロジェクトを見る",
+      "hero.ctaContact": "お問い合わせ",
+
+      "about.label": "About",
+      "about.title": "プロフィール",
+      "about.body":
+        "理論物理学の博士課程3年目（来年修了予定）で、確率過程、高性能科学計算、大規模な Python / MATLAB モデリングの背景を持っています。最近、プライベート・エクイティ投資会社に研究インターンとして加わり、PE関連のリサーチに従事しています。博士課程で培った構造化された分析、複雑な問題の分解、データとモデルから明確な結論を導く力を、産業・投資リサーチに活かしています。今後はプライベート・エクイティおよび投資リサーチの方向でキャリアを築いていきたいと考えています。",
+
+      "experience.label": "キャリア",
+      "experience.title": "職歴",
+      "exp.ngi.date": "2025年6月 – 2025年11月",
+      "exp.ngi.role": "訪問研究員",
+      "exp.ngi.org": "英国国立グラフェン研究所（National Graphene Institute）",
+      "exp.ngi.b1":
+        "周期駆動散逸スピンモデルにおける量子カオスと古典カオスの関係と相違を研究。",
+      "exp.ngi.b2":
+        "自己無撞着 Hartree ポテンシャルを取り入れた四層グラフェンの計算モデルを構築。",
+      "exp.ngi.b3":
+        "二次元系における異なる Hartree 補正を理論的に検討。",
+      "exp.pwc.date": "2021年8月 – 2022年7月",
+      "exp.pwc.role": "監査",
+      "exp.pwc.org": "PwC 上海",
+      "exp.pwc.b1":
+        "公募・私募ファンドのクライアントに対し、統計的サンプリング、分析的検討、大規模データ検証を実施。",
+      "exp.pwc.b2":
+        "リスク管理・コンプライアンス体制を評価し、財務報告と規制プロセスへの理解を深めた。",
+      "exp.pwc.b3":
+        "クロスファンクショナルなチームと連携し、データ駆動型の監査評価を提供。",
+
+      "education.label": "学問",
+      "education.title": "学歴",
+      "edu.phd.degree": "理論物理学 博士課程（在学）",
+      "edu.phd.school": "香港城市大学",
+      "edu.msc.degree": "応用物理学 修士（Distinction）",
+      "edu.msc.school": "香港城市大学",
+      "edu.bsc.degree": "応用化学 学士（First Class）",
+      "edu.bsc.school": "同済大学",
+
+      "publications.label": "研究",
+      "publications.title": "論文",
+      "publications.view": "arXiv で見る →",
+
+      "projects.label": "主な成果",
+      "projects.title": "プロジェクト",
+      "proj.chaos.title": "周期駆動散逸スピン系におけるカオス",
+      "proj.chaos.tag": "量子ダイナミクス · 高性能計算",
+      "proj.chaos.b1":
+        "周期駆動散逸スピンモデルにおける量子カオスと古典カオスを比較。",
+      "proj.chaos.b2":
+        "Lyapunov 指数を計算し、熱力学的古典極限と有限サイズの量子挙動を対比。",
+      "proj.chaos.b3":
+        "Python / MATLAB で大規模行列発展と並列化したシミュレーションを実装。",
+      "proj.mient.title": "測定誘起エンタングルメント転移",
+      "proj.mient.tag": "自由フェルミオン · 確率ダイナミクス",
+      "proj.mient.b1":
+        "ブラウンノイズ駆動の確率的シュレーディンガー発展下の自由フェルミオン鎖におけるエンタングルメント転移を研究。",
+      "proj.mient.b2":
+        "測定強度とポテンシャル強度の変化に伴う、体積則 / 面積則の二部エンタングルメントエントロピーの転移を解析。",
+      "proj.mient.b3":
+        "確率微分方程式および確率的ダイナミクス発展の数値ソルバーを開発。",
+      "proj.graphene.title": "四層グラフェンの Hartree 自己無撞着モデリング",
+      "proj.graphene.tag": "自己無撞着場 · 材料計算",
+      "proj.graphene.b1":
+        "自己無撞着 Hartree ポテンシャルを含む四層グラフェンの計算モデルを構築。",
+      "proj.graphene.b2":
+        "反復的自己無撞着場（SCF）枠組みの下で層依存ポテンシャルと電子構造を求解。",
+      "proj.graphene.b3":
+        "複雑な多パラメータ系向けの反復的自己無撞着最適化アルゴリズムを開発。",
+
+      "skills.label": "ツールキット",
+      "skills.title": "スキル",
+      "skills.prog": "プログラミング",
+      "skills.math": "数学",
+      "skills.lang": "言語",
+      "skills.math.prob": "確率論",
+      "skills.math.stoch": "確率解析",
+      "skills.math.num": "数値解析",
+      "skills.math.la": "線形代数",
+      "skills.math.game": "ゲーム理論",
+      "skills.lang.zh": "中国語（普通話）",
+      "skills.lang.en": "英語",
+      "skills.lang.sh": "上海語",
+      "skills.lang.yue": "広東語",
+      "skills.lang.ja": "日本語",
+
+      "teaching.label": "コミュニティ",
+      "teaching.title": "教育・学会",
+      "teaching.ta": "ティーチング・アシスタント",
+      "teaching.conf": "学会・会議",
+      "teaching.t1": "初等古典力学",
+      "teaching.t2": "基礎物理学",
+      "teaching.t3": "基礎物理学、一般物理学 I",
+      "teaching.c1":
+        "粤港澳大湾区物理学会合同年会 · 香港城市大学",
+      "teaching.c2":
+        "物理・天文学科大学院研究会議 · 英国マンチェスター大学",
+
+      "achievements.label": "ハイライト",
+      "achievements.title": "実績・資格",
+      "ach.cube.title": "ルービックキューブ",
+      "ach.cube.body":
+        "アジア記録 3、国内記録 11；WCA 大会で金 48・銀 21・銅 24 — パターン認識、問題解決、プレッシャー下での認知的敏捷性を示す。",
+      "ach.cube.link": "WCA プロフィール →",
+      "ach.cert.title": "資格",
+      "ach.cert.cfa": "CFA サステナブル投資証明書（ESG）",
+      "ach.cert.sac": "証券業資格証明書（SAC）",
+
+      "contact.label": "Connect",
+      "contact.title": "お問い合わせ",
+      "contact.desc":
+        "プライベート・エクイティ、投資リサーチ、および関連する機会についてのご連絡を歓迎します。",
+      "contact.email": "メール",
+      "contact.linkedin": "樊浩玮",
+      "contact.form.name": "お名前",
+      "contact.form.email": "メールアドレス",
+      "contact.form.message": "メッセージ",
+      "contact.form.submit": "送信",
+      "contact.form.mailto": "メールで直接連絡",
+      "contact.form.placeholder":
+        "フォームはまだ接続されていません。hwfan0930@gmail.com までメールでご連絡ください。",
+      "contact.form.validation": "すべての項目を入力し、有効なメールアドレスを記入してください。",
+      "contact.form.errName": "お名前を入力してください。",
+      "contact.form.errEmail": "有効なメールアドレスを入力してください。",
+      "contact.form.errMessage": "メッセージを入力してください。",
+
+      "footer.copy": "© 2026 樊浩玮. All rights reserved.",
+      "footer.updated": "最終更新：2026年7月",
+      documentTitle: "樊浩玮 · パーソナルホームページ",
+    },
+  };
+
+  function detectLang() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (SUPPORTED.indexOf(saved) !== -1) return saved;
+    } catch (_) {
+      /* ignore */
+    }
+    const nav = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+    if (nav.startsWith("zh")) return "zh";
+    if (nav.startsWith("ja")) return "ja";
+    return "en";
+  }
+
+  function t(key, lang) {
+    const L = lang || currentLang;
+    return (dict[L] && dict[L][key]) || (dict.en && dict.en[key]) || key;
+  }
+
+  function htmlLang(lang) {
+    if (lang === "zh") return "zh-Hans";
+    if (lang === "ja") return "ja";
+    return "en";
+  }
+
+  let currentLang = detectLang();
+
+  function applyLanguage(lang) {
+    if (!dict[lang]) lang = "en";
+    currentLang = lang;
+
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch (_) {
+      /* ignore */
+    }
+
+    document.documentElement.lang = htmlLang(lang);
+    document.title = t("documentTitle", lang);
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (!key) return;
+      const value = t(key, lang);
+      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+        el.placeholder = value;
+      } else {
+        el.textContent = value;
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-aria");
+      if (!key) return;
+      el.setAttribute("aria-label", t(key, lang));
+    });
+
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      const isActive = btn.getAttribute("data-lang") === lang;
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+
+    // CJK name for zh/ja; Latin name for en
+    const brandEn = document.querySelector(".nav-brand-en");
+    const brandZh = document.querySelector(".nav-brand-zh");
+    if (brandEn && brandZh) {
+      if (lang === "zh" || lang === "ja") {
+        brandEn.hidden = true;
+        brandZh.hidden = false;
+        brandZh.textContent = t("brand", lang);
+      } else {
+        brandEn.hidden = false;
+        brandZh.hidden = true;
+      }
+    }
+
+    window.dispatchEvent(
+      new CustomEvent("languagechange", { detail: { lang } })
+    );
+  }
+
+  function initI18n() {
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        if (lang) applyLanguage(lang);
+      });
+    });
+    applyLanguage(currentLang);
+  }
+
+  window.HF_I18N = {
+    t,
+    applyLanguage,
+    getLang: () => currentLang,
+    init: initI18n,
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initI18n);
+  } else {
+    initI18n();
+  }
+})();
