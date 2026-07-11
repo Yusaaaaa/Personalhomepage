@@ -14,6 +14,7 @@
       brand: "Haowei Fan",
       brandZh: "Haowei Fan",
       "nav.about": "About",
+      "nav.writing": "Writing",
       "nav.experience": "Experience",
       "nav.education": "Education",
       "nav.publications": "Publications",
@@ -23,6 +24,22 @@
       "nav.contact": "Contact",
       menuToggle: "Open menu",
       themeToggle: "Toggle light / dark theme",
+
+      "writing.label": "Writing",
+      "writing.title": "Notes & Essays",
+      "writing.desc": "Short notes, essays, and loose thoughts — newest first.",
+      "writing.descHome":
+        "Latest notes and essays. Open any card for the full piece.",
+      "writing.viewAll": "View all notes",
+      "writing.readMore": "Read more →",
+      "writing.empty": "No notes yet.",
+      "writing.loading": "Loading…",
+      "writing.error": "Could not load notes. Try again later.",
+      "writing.backHome": "← Back to home",
+      "writing.backList": "← All notes",
+      "writing.missingSlug": "No article selected.",
+      "writing.notFound": "Article not found.",
+      documentTitleWriting: "Writing · Haowei Fan",
 
       "hero.eyebrow": "PhD Candidate · Private Equity Research Intern",
       "hero.name": "Haowei Fan",
@@ -165,6 +182,7 @@
       brand: "樊浩玮",
       brandZh: "樊浩玮",
       "nav.about": "简介",
+      "nav.writing": "随笔",
       "nav.experience": "经历",
       "nav.education": "教育",
       "nav.publications": "论文",
@@ -174,6 +192,21 @@
       "nav.contact": "联系",
       menuToggle: "打开菜单",
       themeToggle: "切换浅色 / 深色主题",
+
+      "writing.label": "写作",
+      "writing.title": "随笔与笔记",
+      "writing.desc": "短文、笔记与随想 — 按日期从新到旧排列。",
+      "writing.descHome": "最新随笔与笔记。点击卡片阅读全文。",
+      "writing.viewAll": "查看全部",
+      "writing.readMore": "阅读全文 →",
+      "writing.empty": "暂无内容。",
+      "writing.loading": "加载中…",
+      "writing.error": "无法加载笔记，请稍后再试。",
+      "writing.backHome": "← 返回主页",
+      "writing.backList": "← 全部笔记",
+      "writing.missingSlug": "未选择文章。",
+      "writing.notFound": "未找到该文章。",
+      documentTitleWriting: "随笔 · 樊浩玮",
 
       "hero.eyebrow": "博士研究生 · 私募股权研究实习生",
       "hero.name": "樊浩玮",
@@ -315,6 +348,7 @@
       brand: "樊浩玮",
       brandZh: "樊浩玮",
       "nav.about": "概要",
+      "nav.writing": "執筆",
       "nav.experience": "経歴",
       "nav.education": "学歴",
       "nav.publications": "論文",
@@ -324,6 +358,21 @@
       "nav.contact": "連絡先",
       menuToggle: "メニューを開く",
       themeToggle: "ライト / ダークテーマを切り替え",
+
+      "writing.label": "Writing",
+      "writing.title": "ノートとエッセイ",
+      "writing.desc": "短いノート、エッセイ、雑記 — 新しい順。",
+      "writing.descHome": "最新のノートとエッセイ。カードを開くと全文を読めます。",
+      "writing.viewAll": "すべて見る",
+      "writing.readMore": "続きを読む →",
+      "writing.empty": "まだノートがありません。",
+      "writing.loading": "読み込み中…",
+      "writing.error": "ノートを読み込めませんでした。後でもう一度お試しください。",
+      "writing.backHome": "← ホームへ戻る",
+      "writing.backList": "← すべてのノート",
+      "writing.missingSlug": "記事が選択されていません。",
+      "writing.notFound": "記事が見つかりません。",
+      documentTitleWriting: "執筆 · 樊浩玮",
 
       "hero.eyebrow": "博士課程 · プライベート・エクイティ研究インターン",
       "hero.name": "樊浩玮",
@@ -499,7 +548,19 @@
     }
 
     document.documentElement.lang = htmlLang(lang);
-    document.title = t("documentTitle", lang);
+    const titleKey =
+      document.body.getAttribute("data-i18n-document-title") || "documentTitle";
+    const postTitleEl = document.getElementById("postTitle");
+    const loadedPost =
+      postTitleEl &&
+      postTitleEl.textContent &&
+      postTitleEl.textContent !== t("writing.loading", "Loading…") &&
+      postTitleEl.textContent !== t("writing.loading", lang);
+    if (loadedPost) {
+      document.title = postTitleEl.textContent + " · Haowei Fan";
+    } else {
+      document.title = t(titleKey, lang);
+    }
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");

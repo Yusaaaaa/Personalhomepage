@@ -31,6 +31,7 @@
       <div class="nav-menu" id="navMenu">
         <ul class="nav-links">
           <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#writing" data-i18n="nav.writing">Writing</a></li>
           <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
           <li><a href="#education" data-i18n="nav.education">Education</a></li>
           <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
@@ -94,8 +95,27 @@
       </div>
     </section>
 
+    <!-- Writing -->
+    <section class="section section-alt" id="writing" aria-labelledby="writing-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-label" data-i18n="writing.label">Writing</p>
+          <h2 class="section-title" id="writing-title" data-i18n="writing.title">Notes &amp; Essays</h2>
+          <p class="section-desc" data-i18n="writing.descHome">
+            Latest notes and essays. Open any card for the full piece.
+          </p>
+        </header>
+        <div class="writing-list" id="writingHomeList" aria-live="polite">
+          <p class="writing-empty" data-i18n="writing.loading">Loading…</p>
+        </div>
+        <div class="writing-footer reveal">
+          <a class="btn btn-secondary" href="writing.html" data-i18n="writing.viewAll">View all notes</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Experience -->
-    <section class="section section-alt" id="experience" aria-labelledby="experience-title">
+    <section class="section" id="experience" aria-labelledby="experience-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="experience.label">Career</p>
@@ -131,7 +151,7 @@
     </section>
 
     <!-- Education -->
-    <section class="section" id="education" aria-labelledby="education-title">
+    <section class="section section-alt" id="education" aria-labelledby="education-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="education.label">Academic</p>
@@ -161,7 +181,7 @@
     </section>
 
     <!-- Publications -->
-    <section class="section section-alt" id="publications" aria-labelledby="publications-title">
+    <section class="section" id="publications" aria-labelledby="publications-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="publications.label">Research</p>
@@ -183,7 +203,7 @@
     </section>
 
     <!-- Projects -->
-    <section class="section" id="projects" aria-labelledby="projects-title">
+    <section class="section section-alt" id="projects" aria-labelledby="projects-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="projects.label">Selected Work</p>
@@ -222,7 +242,7 @@
     </section>
 
     <!-- Skills -->
-    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
+    <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="skills.label">Toolkit</p>
@@ -266,7 +286,7 @@
     </section>
 
     <!-- Teaching & Conferences -->
-    <section class="section" id="teaching" aria-labelledby="teaching-title">
+    <section class="section section-alt" id="teaching" aria-labelledby="teaching-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="teaching.label">Community</p>
@@ -299,7 +319,7 @@
     </section>
 
     <!-- Achievements -->
-    <section class="section section-alt" id="achievements" aria-labelledby="achievements-title">
+    <section class="section" id="achievements" aria-labelledby="achievements-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="achievements.label">Highlights</p>
@@ -325,7 +345,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
+    <section class="section section-alt" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="contact.label">Connect</p>
@@ -400,5 +420,6 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/writing.js"></script>
 </body>
 </html>
