@@ -1,14 +1,48 @@
 /**
- * Writing index (homepage top 5 / full list) + single post renderer
+ * Multi-collection content: homepage top 5 / full list / single post
+ * Collections: ai_views | writing | notes
  */
 (function () {
   "use strict";
 
-  const INDEX_URL = "data/writing-index.json";
   const HOME_LIMIT = 5;
+
+  const COLLECTIONS = {
+    ai_views: {
+      id: "ai_views",
+      index: "data/ai-views-index.json",
+      listPage: "ai-views.html",
+      i18n: "aiViews",
+      homeListId: "aiViewsHomeList",
+      fullListId: "aiViewsFullList",
+      navSelector: '[data-nav-collection="ai_views"]',
+    },
+    writing: {
+      id: "writing",
+      index: "data/writing-index.json",
+      listPage: "writing.html",
+      i18n: "writing",
+      homeListId: "writingHomeList",
+      fullListId: "writingFullList",
+      navSelector: '[data-nav-collection="writing"]',
+    },
+    notes: {
+      id: "notes",
+      index: "data/notes-index.json",
+      listPage: "notes.html",
+      i18n: "notes",
+      homeListId: "notesHomeList",
+      fullListId: "notesFullList",
+      navSelector: '[data-nav-collection="notes"]',
+    },
+  };
 
   function t(key, fallback) {
     return window.HF_I18N ? window.HF_I18N.t(key) : fallback || key;
+  }
+
+  function i18nKey(cfg, suffix) {
+    return cfg.i18n + "." + suffix;
   }
 
   function formatDate(iso) {
@@ -28,13 +62,12 @@
   }
 
   function resolveUrl(path) {
-    // Relative to site root (works under /Personalhomepage/ when pages are at root)
     return path;
   }
 
-  async function loadIndex() {
-    const res = await fetch(resolveUrl(INDEX_URL), { cache: "no-cache" });
-    if (!res.ok) throw new Error("Failed to load writing index");
+  async function loadIndex(cfg) {
+    const res = await fetch(resolveUrl(cfg.index), { cache: "no-cache" });
+    if (!res.ok) throw new Error("Failed to load index: " + cfg.index);
     return res.json();
   }
 
@@ -63,8 +96,12 @@
     return { meta, body };
   }
 
-  function cardHtml(post) {
-    const href = `post.html?slug=${encodeURIComponent(post.slug)}`;
+  function cardHtml(cfg, post) {
+    const href =
+      "post.html?collection=" +
+      encodeURIComponent(cfg.id) +
+      "&slug=" +
+      encodeURIComponent(post.slug);
     const date = formatDate(post.date);
     const summary = post.summary
       ? `<p class="writing-card-summary">${escapeHtml(post.summary)}</p>`
@@ -76,8 +113,8 @@
         </div>
         <h3 class="writing-card-title">${escapeHtml(post.title)}</h3>
         ${summary}
-        <span class="writing-card-more" data-i18n="writing.readMore">${escapeHtml(
-          t("writing.readMore", "Read more →")
+        <span class="writing-card-more" data-i18n="${i18nKey(cfg, "readMore")}">${escapeHtml(
+          t(i18nKey(cfg, "readMore"), "Read more →")
         )}</span>
       </a>
     `;
@@ -110,49 +147,101 @@
     });
   }
 
-  async function renderList(container, limit) {
+  async function renderList(cfg, container, limit) {
     if (!container) return;
     try {
-      const posts = await loadIndex();
+      const posts = await loadIndex(cfg);
       const slice =
         typeof limit === "number" ? posts.slice(0, limit) : posts;
       if (!slice.length) {
-        setEmpty(container, t("writing.empty", "No notes yet."));
+        setEmpty(container, t(i18nKey(cfg, "empty"), "No notes yet."));
         return;
       }
-      container.innerHTML = slice.map(cardHtml).join("");
+      container.innerHTML = slice.map((p) => cardHtml(cfg, p)).join("");
       reapplyI18n(container);
       revealNew(container);
     } catch (err) {
       console.error(err);
       setEmpty(
         container,
-        t("writing.error", "Could not load notes. Try again later.")
+        t(i18nKey(cfg, "error"), "Could not load content. Try again later.")
       );
     }
+  }
+
+  function resolveCollectionFromParams() {
+    const params = new URLSearchParams(window.location.search);
+    const raw = (params.get("collection") || "").trim();
+    if (raw && COLLECTIONS[raw]) return COLLECTIONS[raw];
+    // Legacy: old links without collection → try ai_views then others
+    return null;
+  }
+
+  async function findPostAcrossCollections(slug) {
+    for (const cfg of Object.values(COLLECTIONS)) {
+      try {
+        const posts = await loadIndex(cfg);
+        const post = posts.find((p) => p.slug === slug);
+        if (post) return { cfg, post };
+      } catch (_) {
+        /* try next */
+      }
+    }
+    return null;
   }
 
   async function renderPost() {
     const titleEl = document.getElementById("postTitle");
     const metaEl = document.getElementById("postMeta");
     const bodyEl = document.getElementById("postBody");
+    const backLink = document.getElementById("postBackLink");
     if (!bodyEl) return;
 
     const params = new URLSearchParams(window.location.search);
     const slug = params.get("slug");
+    let cfg = resolveCollectionFromParams();
+
     if (!slug) {
+      const prefix = cfg ? cfg.i18n : "writing";
       bodyEl.innerHTML = `<p class="writing-empty">${escapeHtml(
-        t("writing.missingSlug", "No article selected.")
+        t(prefix + ".missingSlug", "No article selected.")
       )}</p>`;
       return;
     }
 
     try {
-      const posts = await loadIndex();
-      const post = posts.find((p) => p.slug === slug);
+      let post = null;
+      if (cfg) {
+        const posts = await loadIndex(cfg);
+        post = posts.find((p) => p.slug === slug) || null;
+      } else {
+        const found = await findPostAcrossCollections(slug);
+        if (found) {
+          cfg = found.cfg;
+          post = found.post;
+        } else {
+          cfg = COLLECTIONS.writing;
+        }
+      }
+
+      if (!cfg) cfg = COLLECTIONS.writing;
+
+      if (backLink) {
+        backLink.href = cfg.listPage;
+        backLink.setAttribute("data-i18n", i18nKey(cfg, "backList"));
+        backLink.textContent = t(i18nKey(cfg, "backList"), "← All");
+      }
+
+      document.querySelectorAll("[data-nav-collection]").forEach((a) => {
+        a.classList.toggle(
+          "is-active",
+          a.getAttribute("data-nav-collection") === cfg.id
+        );
+      });
+
       if (!post) {
         bodyEl.innerHTML = `<p class="writing-empty">${escapeHtml(
-          t("writing.notFound", "Article not found.")
+          t(i18nKey(cfg, "notFound"), "Article not found.")
         )}</p>`;
         return;
       }
@@ -183,29 +272,50 @@
       }
     } catch (err) {
       console.error(err);
+      const prefix = (cfg && cfg.i18n) || "writing";
       bodyEl.innerHTML = `<p class="writing-empty">${escapeHtml(
-        t("writing.error", "Could not load notes. Try again later.")
+        t(prefix + ".error", "Could not load content. Try again later.")
       )}</p>`;
     }
   }
 
   function boot() {
-    const homeList = document.getElementById("writingHomeList");
-    const fullList = document.getElementById("writingFullList");
-    const postBody = document.getElementById("postBody");
+    const listJobs = [];
 
-    if (homeList) renderList(homeList, HOME_LIMIT);
-    if (fullList) renderList(fullList, null);
+    Object.values(COLLECTIONS).forEach((cfg) => {
+      const home = document.getElementById(cfg.homeListId);
+      const full = document.getElementById(cfg.fullListId);
+      if (home) listJobs.push({ cfg, el: home, limit: HOME_LIMIT });
+      if (full) listJobs.push({ cfg, el: full, limit: null });
+    });
+
+    // data-collection attribute support
+    document.querySelectorAll("[data-collection][data-list]").forEach((el) => {
+      const id = el.getAttribute("data-collection");
+      const mode = el.getAttribute("data-list"); // home | full
+      const cfg = COLLECTIONS[id];
+      if (!cfg) return;
+      const limit = mode === "home" ? HOME_LIMIT : null;
+      if (!listJobs.some((j) => j.el === el)) {
+        listJobs.push({ cfg, el, limit });
+      }
+    });
+
+    listJobs.forEach(({ cfg, el, limit }) => renderList(cfg, el, limit));
+
+    const postBody = document.getElementById("postBody");
     if (postBody) renderPost();
 
     window.addEventListener("languagechange", () => {
-      if (homeList) renderList(homeList, HOME_LIMIT);
-      if (fullList) renderList(fullList, null);
-      // Post body language is content-native; only reformat date
+      listJobs.forEach(({ cfg, el, limit }) => renderList(cfg, el, limit));
       if (postBody && document.getElementById("postMeta")) {
         const time = document.querySelector("#postMeta time");
         if (time && time.getAttribute("datetime")) {
           time.textContent = formatDate(time.getAttribute("datetime"));
+        }
+        const backLink = document.getElementById("postBackLink");
+        if (backLink && backLink.getAttribute("data-i18n")) {
+          backLink.textContent = t(backLink.getAttribute("data-i18n"));
         }
       }
     });

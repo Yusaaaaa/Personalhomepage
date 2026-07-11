@@ -31,7 +31,9 @@
       <div class="nav-menu" id="navMenu">
         <ul class="nav-links">
           <li><a href="#about" data-i18n="nav.about">About</a></li>
-          <li><a href="#writing" data-i18n="nav.writing">Writing</a></li>
+          <li><a href="#ai-views" data-i18n="nav.aiViews" data-nav-collection="ai_views">AI Views</a></li>
+          <li><a href="#writing" data-i18n="nav.writing" data-nav-collection="writing">Essays</a></li>
+          <li><a href="#notes" data-i18n="nav.notes" data-nav-collection="notes">Notes</a></li>
           <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
           <li><a href="#education" data-i18n="nav.education">Education</a></li>
           <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
@@ -95,21 +97,59 @@
       </div>
     </section>
 
-    <!-- Writing -->
-    <section class="section section-alt" id="writing" aria-labelledby="writing-title">
+    <!-- AI Views -->
+    <section class="section section-alt" id="ai-views" aria-labelledby="ai-views-title">
       <div class="container">
         <header class="section-header reveal">
-          <p class="section-label" data-i18n="writing.label">Writing</p>
-          <h2 class="section-title" id="writing-title" data-i18n="writing.title">Notes &amp; Essays</h2>
+          <p class="section-label" data-i18n="aiViews.label">AI</p>
+          <h2 class="section-title" id="ai-views-title" data-i18n="aiViews.title">AI-Assisted Insights</h2>
+          <p class="section-desc" data-i18n="aiViews.descHome">
+            Latest AI-assisted insights. Open any card for the full piece.
+          </p>
+        </header>
+        <div class="writing-list" id="aiViewsHomeList" aria-live="polite">
+          <p class="writing-empty" data-i18n="aiViews.loading">Loading…</p>
+        </div>
+        <div class="writing-footer reveal">
+          <a class="btn btn-secondary" href="ai-views.html" data-i18n="aiViews.viewAll">View all</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Essays / Writing -->
+    <section class="section" id="writing" aria-labelledby="writing-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-label" data-i18n="writing.label">Essays</p>
+          <h2 class="section-title" id="writing-title" data-i18n="writing.title">Essays</h2>
           <p class="section-desc" data-i18n="writing.descHome">
-            Latest notes and essays. Open any card for the full piece.
+            Latest personal essays. Open any card for the full piece.
           </p>
         </header>
         <div class="writing-list" id="writingHomeList" aria-live="polite">
           <p class="writing-empty" data-i18n="writing.loading">Loading…</p>
         </div>
         <div class="writing-footer reveal">
-          <a class="btn btn-secondary" href="writing.html" data-i18n="writing.viewAll">View all notes</a>
+          <a class="btn btn-secondary" href="writing.html" data-i18n="writing.viewAll">View all essays</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section class="section section-alt" id="notes" aria-labelledby="notes-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-label" data-i18n="notes.label">Notes</p>
+          <h2 class="section-title" id="notes-title" data-i18n="notes.title">Notes</h2>
+          <p class="section-desc" data-i18n="notes.descHome">
+            Latest study notes. Open any card for the full piece.
+          </p>
+        </header>
+        <div class="writing-list" id="notesHomeList" aria-live="polite">
+          <p class="writing-empty" data-i18n="notes.loading">Loading…</p>
+        </div>
+        <div class="writing-footer reveal">
+          <a class="btn btn-secondary" href="notes.html" data-i18n="notes.viewAll">View all notes</a>
         </div>
       </div>
     </section>

@@ -1,9 +1,9 @@
-# 随笔（writing）
+# AI 辅助 · 对世界的洞察（AI_views）
 
-把个人随笔、短文放在这里。主页 **随笔** 区块展示按 `date` 从新到旧的最新 5 条；完整列表在 `writing.html`，正文在：
+把「AI 辅助」写下的行业 / 世界观察放在这里。主页 **AI 洞察** 区块展示按 `date` 从新到旧的最新 5 条；完整列表在 `ai-views.html`，正文在：
 
 ```text
-post.html?collection=writing&slug=文件名
+post.html?collection=ai_views&slug=文件名
 ```
 
 ## 文件格式
@@ -24,16 +24,16 @@ summary: 可选，卡片上显示的一句话
 | `date` | **是**（排序用） | `YYYY-MM-DD`，越新越靠前 |
 | `summary` | 否 | 主页 / 列表摘要；缺省取正文前约 120 字 |
 
-- 文件名即 slug：`hello-world.md` → `post.html?collection=writing&slug=hello-world`
+- 文件名即 slug：`hello-world.md` → `post.html?collection=ai_views&slug=hello-world`
 - 忽略：`README.md`、以下划线开头的文件（如 `_draft.md`）
 
 ## 发布到 GitHub
 
 ```bash
 cd /Users/yusa/GrokWorkSpace/Personalhomepage
-./scripts/publish-content.sh writing
+./scripts/publish-content.sh ai_views
 # 或自定义提交说明：
-./scripts/publish-content.sh writing "writing: add essay"
+./scripts/publish-content.sh ai_views "ai_views: add NEV overview"
 ```
 
 只想本地预览、不推送时：
