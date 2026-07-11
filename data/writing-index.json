@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "second-note",
+    "file": "writing/second-note.md",
+    "title": "A newer note",
+    "date": "2026-07-12",
+    "summary": "Should appear first in the list."
+  },
+  {
+    "slug": "welcome",
+    "file": "writing/welcome.md",
+    "title": "Welcome to my writing corner",
+    "date": "2026-07-11",
+    "summary": "A short note on how this section works — notes, essays, and loose thoughts."
+  }
+]
