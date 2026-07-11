@@ -208,6 +208,8 @@
       "contact.form.errMessage": "Please enter a message.",
 
       "footer.copy": "© 2026 Haowei Fan. All rights reserved.",
+      "footer.credit":
+        'Built with <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> · Design system informed by <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
       "footer.updated": "Last updated: July 2026",
       documentTitle: "Haowei Fan · Personal Homepage",
     },
@@ -406,6 +408,8 @@
       "contact.form.errMessage": "请填写留言内容。",
 
       "footer.copy": "© 2026 樊浩玮. 保留所有权利。",
+      "footer.credit":
+        '本页面由 <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> 生成 · 设计系统参考 <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
       "footer.updated": "最近更新：2026 年 7 月",
       documentTitle: "樊浩玮 · 个人主页",
     },
@@ -611,6 +615,8 @@
       "contact.form.errMessage": "メッセージを入力してください。",
 
       "footer.copy": "© 2026 樊浩玮. All rights reserved.",
+      "footer.credit":
+        '<a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> で構築 · デザインは <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a> を参考',
       "footer.updated": "最終更新：2026年7月",
       documentTitle: "樊浩玮 · パーソナルホームページ",
     },
@@ -683,6 +689,13 @@
       } else {
         el.textContent = value;
       }
+    });
+
+    /* Trusted HTML strings from our dictionary only (e.g. footer credits) */
+    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-html");
+      if (!key) return;
+      el.innerHTML = t(key, lang);
     });
 
     document.querySelectorAll("[data-i18n-aria]").forEach((el) => {

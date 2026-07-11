@@ -32,8 +32,16 @@
     const metaDark = document.querySelector(
       'meta[name="theme-color"][media*="dark"]'
     );
-    if (metaLight) metaLight.setAttribute("content", theme === "dark" ? "#000000" : "#f5f5f7");
-    if (metaDark) metaDark.setAttribute("content", theme === "dark" ? "#000000" : "#f5f5f7");
+    if (metaLight)
+      metaLight.setAttribute(
+        "content",
+        theme === "dark" ? "#07090f" : "#f5f5f7"
+      );
+    if (metaDark)
+      metaDark.setAttribute(
+        "content",
+        theme === "dark" ? "#07090f" : "#f5f5f7"
+      );
     try {
       localStorage.setItem(THEME_KEY, theme);
     } catch (_) {
