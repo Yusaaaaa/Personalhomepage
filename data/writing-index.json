@@ -1,16 +1,9 @@
 [
   {
-    "slug": "second-note",
-    "file": "writing/second-note.md",
-    "title": "A newer note",
-    "date": "2026-07-12",
-    "summary": "Should appear first in the list."
-  },
-  {
-    "slug": "welcome",
-    "file": "writing/welcome.md",
-    "title": "Welcome to my writing corner",
+    "slug": "china-nev-industry-overview-2026",
+    "file": "writing/china-nev-industry-overview-2026.md",
+    "title": "新能源汽车行业通识：供应链、造车思路与资本市场再定价",
     "date": "2026-07-11",
-    "summary": "A short note on how this section works — notes, essays, and loose thoughts."
+    "summary": "从上下游产业链、盈利模式与政策环境入手，对照理想、小鹏、蔚来、小米、特斯拉等主流玩家的产品逻辑与受众，并梳理近年美股/港股走势与估值判断框架。"
   }
 ]
