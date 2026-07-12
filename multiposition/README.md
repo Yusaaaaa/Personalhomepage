@@ -1,8 +1,8 @@
-# MultiPosition（网页版）
+# MultiPosition（已迁移）
 
-找到同时包含多个目标地点的共现区域。纯前端工具，部署于本仓库 GitHub Pages。
+本目录为早期挂载副本。正式仓库与演示：
 
-- **在线演示：** https://yusaaaaa.github.io/Personalhomepage/multiposition/
-- **用法：** 输入城市 + 至少 2 个关键词 → 开始发现
+- **仓库：** https://github.com/Yusaaaaa/multi-poi-finder
+- **演示：** https://yusaaaaa.github.io/multi-poi-finder/
 
-开发与本地说明见工作区 `MultiPosition/README.md`。
+可删除本目录而不影响线上工具。
