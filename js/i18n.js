@@ -126,6 +126,17 @@
 
       "projects.label": "Selected Work",
       "projects.title": "Projects",
+      "proj.multiposition.title":
+        "MultiPosition — Multi-Target Co-occurrence Regions",
+      "proj.multiposition.tag": "Web Tool · Geospatial · Clustering",
+      "proj.multiposition.b1":
+        "Built a pure front-end tool that finds urban areas where multiple POI types co-occur (e.g. café + EV store).",
+      "proj.multiposition.b2":
+        "Combined Amap POI search with client-side DBSCAN clustering and match-score ranking.",
+      "proj.multiposition.b3":
+        "Shipped as a static GitHub Pages app with map visualization and city / nearby search modes.",
+      "proj.multiposition.demo": "Live demo →",
+      "proj.multiposition.repo": "GitHub →",
       "proj.chaos.title": "Chaos in Periodically Driven Dissipative Spin Systems",
       "proj.chaos.tag": "Quantum Dynamics · HPC",
       "proj.chaos.b1":
@@ -326,6 +337,16 @@
 
       "projects.label": "精选",
       "projects.title": "项目",
+      "proj.multiposition.title": "MultiPosition — 多目标共现区域发现",
+      "proj.multiposition.tag": "网页工具 · 地理空间 · 聚类",
+      "proj.multiposition.b1":
+        "开发纯前端工具，在城市中发现多种 POI 类型共现的区域（如咖啡 + 新能源门店）。",
+      "proj.multiposition.b2":
+        "对接高德 POI 检索，并在客户端完成 DBSCAN 共现聚类与匹配度排序。",
+      "proj.multiposition.b3":
+        "以静态站点形式部署于 GitHub Pages，支持地图可视化与城市 / 附近搜索。",
+      "proj.multiposition.demo": "在线演示 →",
+      "proj.multiposition.repo": "GitHub →",
       "proj.chaos.title": "周期性驱动耗散自旋系统中的混沌",
       "proj.chaos.tag": "量子动力学 · 高性能计算",
       "proj.chaos.b1":
@@ -526,6 +547,16 @@
 
       "projects.label": "精選",
       "projects.title": "項目",
+      "proj.multiposition.title": "MultiPosition — 多目標共現區域發現",
+      "proj.multiposition.tag": "網頁工具 · 地理空間 · 聚類",
+      "proj.multiposition.b1":
+        "開發純前端工具，在城市中發現多種 POI 類型共現的區域（如咖啡 + 新能源門店）。",
+      "proj.multiposition.b2":
+        "對接高德 POI 檢索，並在客戶端完成 DBSCAN 共現聚類與匹配度排序。",
+      "proj.multiposition.b3":
+        "以靜態站點形式部署於 GitHub Pages，支援地圖可視化與城市 / 附近搜索。",
+      "proj.multiposition.demo": "線上演示 →",
+      "proj.multiposition.repo": "GitHub →",
       "proj.chaos.title": "周期性驅動耗散自旋系統中的混沌",
       "proj.chaos.tag": "量子動力學 · 高性能計算",
       "proj.chaos.b1":
@@ -733,6 +764,17 @@
 
       "projects.label": "主な成果",
       "projects.title": "プロジェクト",
+      "proj.multiposition.title":
+        "MultiPosition — 複数ターゲット共起エリア探索",
+      "proj.multiposition.tag": "Webツール · 地理空間 · クラスタリング",
+      "proj.multiposition.b1":
+        "複数の POI タイプが共起する都市エリアを見つける純フロントエンドツールを構築（例：カフェ + EV 店舗）。",
+      "proj.multiposition.b2":
+        "高徳 POI 検索とクライアント側 DBSCAN 共起クラスタリング・マッチ度ランキングを組み合わせ。",
+      "proj.multiposition.b3":
+        "GitHub Pages 上の静的アプリとして公開し、地図可視化と都市 / 近傍検索に対応。",
+      "proj.multiposition.demo": "デモを見る →",
+      "proj.multiposition.repo": "GitHub →",
       "proj.chaos.title": "周期駆動散逸スピン系におけるカオス",
       "proj.chaos.tag": "量子ダイナミクス · 高性能計算",
       "proj.chaos.b1":

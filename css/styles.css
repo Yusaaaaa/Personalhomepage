@@ -1072,6 +1072,24 @@ a.writing-card:focus-visible {
   color: var(--accent);
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: var(--space-4) 0 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.project-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
 /* Skills */
 .skills-grid {
   display: grid;

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="MultiPosition — 找到同时包含多个目标地点的共现区域" />
+  <meta name="theme-color" content="#000000" />
+  <title>MultiPosition · 多目标共现区域</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Search -->
+    <section class="view" data-view="search">
+      <header class="nav">
+        <div class="nav-inner">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span class="brand-name">MultiPosition</span>
+          </div>
+          <div class="nav-actions">
+            <div class="mode-toggle" role="group" aria-label="搜索模式">
+              <button type="button" class="mode-item active" data-mode="city">城市</button>
+              <button type="button" class="mode-item" data-mode="nearby">附近</button>
+            </div>
+            <button type="button" class="icon-btn" id="btnSettings" title="设置">⚙</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="scroll">
+        <div class="content-wrap">
+          <div class="hero">
+            <h1 class="display">找到同时拥有
+多个目标的区域</h1>
+            <p class="hero-sub">输入品牌或场所类型，发现它们共现的生活圈</p>
+          </div>
+
+          <div class="block glass" id="cityBlock">
+            <span class="block-label">搜索范围</span>
+            <input id="cityInput" class="field" type="text" placeholder="输入城市，例如 深圳" autocomplete="off" />
+          </div>
+
+          <div class="block glass" id="nearbyBlock" hidden>
+            <span class="block-label">搜索范围</span>
+            <div class="nearby-row">
+              <div>
+                <span class="headline nearby-title" id="locationTitle">尚未获取定位</span>
+                <span class="caption" id="locationText">授权后搜索你附近的共现区域</span>
+              </div>
+              <button type="button" class="btn-locate" id="btnLocate">定位</button>
+            </div>
+            <div id="radiusRow" hidden>
+              <div class="row-between" style="margin-top:12px">
+                <span class="caption">附近半径</span>
+                <span class="caption accent-text" id="radiusLabel">3.0 km</span>
+              </div>
+              <input id="radiusRange" type="range" min="1000" max="8000" step="500" value="3000" />
+            </div>
+          </div>
+
+          <div class="block glass">
+            <div class="block-head">
+              <span class="block-label" style="margin:0">目标地点</span>
+              <span class="caption">至少 2 个</span>
+            </div>
+            <div class="chips" id="keywordChips"></div>
+            <div class="add-row">
+              <input id="keywordInput" class="field" type="text" placeholder="瑞幸咖啡、理想汽车…" autocomplete="off" />
+              <button type="button" class="btn-add" id="btnAddKeyword">加入</button>
+            </div>
+          </div>
+
+          <div class="block glass">
+            <div class="option-row">
+              <div class="option-text">
+                <span class="headline option-title">必须全部包含</span>
+                <span class="caption">关闭后，命中部分关键词即可</span>
+              </div>
+              <input type="checkbox" id="matchAll" checked />
+            </div>
+            <div class="divider"></div>
+            <div class="option-row column">
+              <div class="option-text row-between">
+                <span class="headline option-title">商圈半径</span>
+                <span class="caption accent-text" id="epsLabel">1.2 km</span>
+              </div>
+              <input id="epsRange" type="range" min="0.4" max="3" step="0.1" value="1.2" />
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section-header">
+              <span class="headline">场景灵感</span>
+              <span class="caption">轻点填入</span>
+            </div>
+            <div class="preset-scroll">
+              <div class="preset-track" id="presetTrack"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-bar">
+        <div class="cta-inner">
+          <button type="button" class="btn-primary" id="btnSearch">开始发现</button>
+          <span class="cta-hint">数据来自高德地图 · 结果仅供参考 · 纯前端工具</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="view" data-view="result" hidden>
+      <header class="nav">
+        <div class="nav-inner">
+          <button type="button" class="back-btn" id="btnBackResult" aria-label="返回">‹</button>
+          <span class="nav-title">发现结果</span>
+          <span class="nav-right"></span>
+        </div>
+      </header>
+      <div class="split">
+        <div class="map-wrap">
+          <div id="resultMap" class="map"></div>
+          <div class="map-stats glass" id="resultStats"></div>
+        </div>
+        <div class="list-panel">
+          <div class="list-header">
+            <span class="headline">推荐区域</span>
+            <span class="caption">按匹配度排序</span>
+          </div>
+          <div id="regionList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detail -->
+    <section class="view" data-view="detail" hidden>
+      <header class="nav">
+        <div class="nav-inner">
+          <button type="button" class="back-btn" id="btnBackDetail" aria-label="返回">‹</button>
+          <span class="nav-title">区域详情</span>
+          <span class="nav-right"></span>
+        </div>
+      </header>
+      <div class="split">
+        <div class="map-wrap">
+          <div id="detailMap" class="map"></div>
+        </div>
+        <div class="list-panel">
+          <div class="detail-head" id="detailHead"></div>
+          <div id="poiList"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="loading-overlay" id="loadingOverlay" hidden>
+    <div class="loading-card glass">
+      <div class="spinner" aria-hidden="true"></div>
+      <div>正在扫描区域…</div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="settings-panel" id="settingsPanel" hidden>
+    <div class="settings-card glass">
+      <h3>高德 Web 服务 Key</h3>
+      <p>Key 仅保存在你的浏览器本地。公开演示 Key 有配额限制；正式使用请到
+        <a href="https://console.amap.com/" target="_blank" rel="noopener">高德控制台</a>
+        申请 Web 服务 Key。</p>
+      <input id="amapKeyInput" class="field" type="text" placeholder="粘贴你的 Key" autocomplete="off" spellcheck="false" />
+      <div class="settings-actions">
+        <button type="button" class="primary" id="btnSaveKey">保存</button>
+        <button type="button" id="btnClearKey">恢复默认</button>
+        <button type="button" id="btnCloseSettings">关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
