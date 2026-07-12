@@ -81,7 +81,7 @@
       "hero.subtitle":
         "Investment research · Analytical rigor · From physics to private equity",
       "hero.lead":
-        "Third-year PhD in Theoretical Physics, graduating next year. Currently interning in private equity research — building toward a career in PE and investment research.",
+        "PhD student in Theoretical Physics. I hope to use knowledge and cognition as leverage in financial markets — expanding personal boundaries and breaking through in value creation.",
       "hero.ctaProjects": "View Projects",
       "hero.ctaContact": "Get in Touch",
 
@@ -281,7 +281,7 @@
       "hero.name": "樊浩玮",
       "hero.subtitle": "投资研究 · 分析与判断 · 从物理到私募股权",
       "hero.lead":
-        "理论物理博士三年级，预计明年毕业。近期加入私募股权投资公司从事 PE 研究实习，希望在私募股权与投资研究方向长期发展。",
+        "理论物理博士生，希望以知识与认知为杠杆，在金融市场中拓宽个人边界、实现价值突破。",
       "hero.ctaProjects": "查看项目",
       "hero.ctaContact": "联系我",
 
@@ -481,7 +481,7 @@
       "hero.name": "樊浩瑋",
       "hero.subtitle": "投資研究 · 分析與判斷 · 從物理到私募股權",
       "hero.lead":
-        "理論物理博士三年級，預計明年畢業。近期加入私募股權投資公司從事 PE 研究實習，希望在私募股權與投資研究方向長期發展。",
+        "理論物理博士生，希望以知識與認知為槓桿，在金融市場中拓寬個人邊界、實現價值突破。",
       "hero.ctaProjects": "查看項目",
       "hero.ctaContact": "聯繫我",
 
@@ -688,7 +688,7 @@
       "hero.subtitle":
         "投資リサーチ · 分析力 · 物理学からPEへ",
       "hero.lead":
-        "理論物理学博士課程3年目、来年修了予定。最近、プライベート・エクイティ投資会社でPE研究インターンとして働き始め、今後はこの分野でのキャリアを目指しています。",
+        "理論物理学の博士課程に在籍。知識と認知をテコに、金融市場で自らの境界を広げ、価値の突破を目指しています。",
       "hero.ctaProjects": "プロジェクトを見る",
       "hero.ctaContact": "お問い合わせ",
 
