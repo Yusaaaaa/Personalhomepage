@@ -1,12 +1,12 @@
 /**
  * Multilingual dictionary + language switcher
- * Languages: en | zh | ja
+ * Languages: en | zh | zh-Hant | ja
  */
 (function () {
   "use strict";
 
   const STORAGE_KEY = "hf-lang";
-  const SUPPORTED = ["en", "zh", "ja"];
+  const SUPPORTED = ["en", "zh", "zh-Hant", "ja"];
 
   const dict = {
     en: {
@@ -88,7 +88,7 @@
       "about.label": "About",
       "about.title": "Profile",
       "about.body":
-        "I am a third-year PhD candidate in Theoretical Physics (expected graduation next year), with a background in stochastic processes, high-performance scientific computing, and large-scale Python/MATLAB modeling. I recently joined a private equity firm as a research intern, working on PE-related research. My training has built strong skills in structured analysis, complex problem-solving, and turning data and models into clear conclusions — capabilities I now apply to industry and investment research. Looking ahead, I am keen to grow in private equity and related investment research roles.",
+        "I am a PhD student in Theoretical Physics. My research background spans quantum theory, low-dimensional systems, stochastic processes, high-performance scientific computing, and large-scale Python/MATLAB modeling. Doctoral training has shaped strong skills in structured analysis, breaking down complex problems, and drawing clear conclusions from data and models — capabilities I now apply to industry and investment research. Looking ahead, I hope to continue deepening my work in private equity and related investment research.",
 
       "experience.label": "Career",
       "experience.title": "Experience",
@@ -288,7 +288,7 @@
       "about.label": "关于",
       "about.title": "个人简介",
       "about.body":
-        "我是理论物理博士三年级学生，预计明年毕业，研究背景涵盖随机过程、高性能科学计算与大规模 Python / MATLAB 建模。近期加入一家私募股权投资公司，从事私募股权相关研究实习。博士训练塑造了结构化分析、复杂问题拆解，以及从数据与模型中提炼清晰结论的能力，我正将这些能力应用到行业与投资研究中。未来希望在私募股权及投资研究相关方向持续深耕。",
+        "我是理论物理博士研究生，研究背景涵盖量子理论，低维系统，随机过程、高性能科学计算与大规模 Python / MATLAB 建模。博士训练塑造了结构化分析、复杂问题拆解，以及从数据与模型中提炼清晰结论的能力，我正将这些能力应用到行业与投资研究中。未来希望在私募股权及投资研究相关方向持续深耕。",
 
       "experience.label": "职业",
       "experience.title": "工作经历",
@@ -414,6 +414,206 @@
       documentTitle: "樊浩玮 · 个人主页",
     },
 
+    "zh-Hant": {
+      skip: "跳到主要內容",
+      brand: "樊浩瑋",
+      brandZh: "樊浩瑋",
+      "nav.about": "簡介",
+      "nav.aiViews": "AI洞察",
+      "nav.writing": "隨筆",
+      "nav.notes": "筆記",
+      "nav.experience": "經歷",
+      "nav.education": "教育",
+      "nav.publications": "論文",
+      "nav.projects": "項目",
+      "nav.skills": "技能",
+      "nav.achievements": "成就",
+      "nav.contact": "聯繫",
+      menuToggle: "打開菜單",
+      themeToggle: "切換淺色 / 深色主題",
+
+      "aiViews.label": "AI",
+      "aiViews.title": "AI輔助-對世界的洞察",
+      "aiViews.desc": "用 AI 輔助梳理的行業與世界觀察。",
+      "aiViews.descHome": "最新 AI 輔助洞察。點擊卡片閱讀全文。",
+      "aiViews.viewAll": "查看全部",
+      "aiViews.readMore": "閱讀全文 →",
+      "aiViews.empty": "暫無內容。",
+      "aiViews.loading": "加載中…",
+      "aiViews.error": "無法加載內容，請稍後再試。",
+      "aiViews.backHome": "← 返回主頁",
+      "aiViews.backList": "← 全部洞察",
+      "aiViews.missingSlug": "未選擇文章。",
+      "aiViews.notFound": "未找到該文章。",
+      documentTitleAiViews: "AI洞察 · 樊浩瑋",
+
+      "writing.label": "隨筆",
+      "writing.title": "隨筆",
+      "writing.desc": "個人短文與隨想。",
+      "writing.descHome": "最新隨筆。點擊卡片閱讀全文。",
+      "writing.viewAll": "查看全部",
+      "writing.readMore": "閱讀全文 →",
+      "writing.empty": "暫無內容。",
+      "writing.loading": "加載中…",
+      "writing.error": "無法加載隨筆，請稍後再試。",
+      "writing.backHome": "← 返回主頁",
+      "writing.backList": "← 全部隨筆",
+      "writing.missingSlug": "未選擇文章。",
+      "writing.notFound": "未找到該文章。",
+      documentTitleWriting: "隨筆 · 樊浩瑋",
+
+      "notes.label": "筆記",
+      "notes.title": "筆記",
+      "notes.desc": "學習筆記與摘錄。",
+      "notes.descHome": "最新學習筆記。點擊卡片閱讀全文。",
+      "notes.viewAll": "查看全部",
+      "notes.readMore": "閱讀全文 →",
+      "notes.empty": "暫無內容。",
+      "notes.loading": "加載中…",
+      "notes.error": "無法加載筆記，請稍後再試。",
+      "notes.backHome": "← 返回主頁",
+      "notes.backList": "← 全部筆記",
+      "notes.missingSlug": "未選擇文章。",
+      "notes.notFound": "未找到該文章。",
+      documentTitleNotes: "筆記 · 樊浩瑋",
+
+      "hero.eyebrow": "博士研究生 · 私募股權研究實習生",
+      "hero.name": "樊浩瑋",
+      "hero.subtitle": "投資研究 · 分析與判斷 · 從物理到私募股權",
+      "hero.lead":
+        "理論物理博士三年級，預計明年畢業。近期加入私募股權投資公司從事 PE 研究實習，希望在私募股權與投資研究方向長期發展。",
+      "hero.ctaProjects": "查看項目",
+      "hero.ctaContact": "聯繫我",
+
+      "about.label": "關於",
+      "about.title": "個人簡介",
+      "about.body":
+        "我是理論物理博士研究生，研究背景涵蓋量子理論，低維系統，隨機過程、高性能科學計算與大規模 Python / MATLAB 建模。博士訓練塑造了結構化分析、複雜問題拆解，以及從數據與模型中提煉清晰結論的能力，我正將這些能力應用到行業與投資研究中。未來希望在私募股權及投資研究相關方向持續深耕。",
+
+      "experience.label": "職業",
+      "experience.title": "工作經歷",
+      "exp.ngi.date": "2025 年 6 月 – 2025 年 11 月",
+      "exp.ngi.role": "訪問學者",
+      "exp.ngi.org": "英國國家石墨烯研究所（National Graphene Institute）",
+      "exp.ngi.b1":
+        "研究周期性驅動耗散自旋模型中量子混沌與經典混沌的關聯與區別。",
+      "exp.ngi.b2":
+        "構建包含自洽 Hartree 勢的四層石墨烯計算模型。",
+      "exp.ngi.b3":
+        "從理論上研究二維體系中不同形式的 Hartree 修正。",
+      "exp.pwc.date": "2021 年 8 月 – 2022 年 7 月",
+      "exp.pwc.role": "審計",
+      "exp.pwc.org": "普華永道上海",
+      "exp.pwc.b1":
+        "面向公募與私募基金客戶開展統計抽樣、分析性覆核與大規模數據驗證。",
+      "exp.pwc.b2":
+        "評估風險控制與合規框架，積累財務報告與監管流程相關經驗。",
+      "exp.pwc.b3":
+        "與跨職能團隊協作，交付數據驅動的審計評估。",
+
+      "education.label": "學術",
+      "education.title": "教育背景",
+      "edu.phd.degree": "理論物理博士（在讀）",
+      "edu.phd.school": "香港城市大學",
+      "edu.msc.degree": "應用物理碩士（Distinction）",
+      "edu.msc.school": "香港城市大學",
+      "edu.bsc.degree": "應用化學學士（First Class）",
+      "edu.bsc.school": "同濟大學",
+
+      "publications.label": "研究",
+      "publications.title": "學術論文",
+      "publications.view": "在 arXiv 查看 →",
+
+      "projects.label": "精選",
+      "projects.title": "項目",
+      "proj.chaos.title": "周期性驅動耗散自旋系統中的混沌",
+      "proj.chaos.tag": "量子動力學 · 高性能計算",
+      "proj.chaos.b1":
+        "比較周期性驅動耗散自旋模型中量子與經典混沌的關係與差異。",
+      "proj.chaos.b2":
+        "計算 Lyapunov 指數，對比熱力學經典極限與有限尺寸量子行爲。",
+      "proj.chaos.b3":
+        "在 Python / MATLAB 中實現大規模矩陣演化與並行隨機動力學模擬。",
+      "proj.mient.title": "測量誘導糾纏相變",
+      "proj.mient.tag": "自由費米子 · 隨機動力學",
+      "proj.mient.b1":
+        "研究在布朗噪聲驅動的隨機薛定諤演化下，自由費米子鏈中的糾纏相變。",
+      "proj.mient.b2":
+        "分析二分糾纏熵在測量強度與勢強度變化下的體律 / 面律轉變。",
+      "proj.mient.b3":
+        "開發隨機微分方程與隨機動力學演化的數值求解器。",
+      "proj.graphene.title": "四層石墨烯 Hartree 自洽建模",
+      "proj.graphene.tag": "自洽場 · 材料計算",
+      "proj.graphene.b1":
+        "構建包含自洽 Hartree 勢的四層石墨烯計算模型。",
+      "proj.graphene.b2":
+        "在迭代自洽場框架下求解層依賴勢與電子結構。",
+      "proj.graphene.b3":
+        "發展面向複雜多參數系統的迭代自洽優化算法。",
+
+      "skills.label": "能力",
+      "skills.title": "技能",
+      "skills.prog": "編程",
+      "skills.math": "數學",
+      "skills.lang": "語言",
+      "skills.math.prob": "概率論",
+      "skills.math.stoch": "隨機微積分",
+      "skills.math.num": "數值分析",
+      "skills.math.la": "線性代數",
+      "skills.math.game": "博弈論",
+      "skills.lang.zh": "普通話",
+      "skills.lang.en": "英語",
+      "skills.lang.sh": "上海話",
+      "skills.lang.yue": "粵語",
+      "skills.lang.ja": "日語",
+
+      "teaching.label": "社區",
+      "teaching.title": "教學與會議",
+      "teaching.ta": "助教經歷",
+      "teaching.conf": "學術會議",
+      "teaching.t1": "經典力學導論",
+      "teaching.t2": "基礎物理",
+      "teaching.t3": "基礎物理、普通物理 I",
+      "teaching.c1":
+        "粵港澳大灣區物理學會聯合年會 · 香港城市大學",
+      "teaching.c2":
+        "物理與天文學系研究生研究會議 · 英國曼徹斯特大學",
+
+      "achievements.label": "亮點",
+      "achievements.title": "成就與證書",
+      "ach.cube.title": "魔方",
+      "ach.cube.body":
+        "3 項亞洲紀錄、11 項國家紀錄；WCA 賽事累計 48 金、21 銀、24 銅——展現模式識別、問題解決與高壓下的認知敏捷。",
+      "ach.cube.link": "WCA 個人主頁 →",
+      "ach.cert.title": "證書",
+      "ach.cert.cfa": "CFA 可持續投資證書（ESG）",
+      "ach.cert.sac": "證券從業資格證書（SAC）",
+
+      "contact.label": "聯繫",
+      "contact.title": "與我聯繫",
+      "contact.desc":
+        "歡迎就私募股權、投資研究及相關機會交流。",
+      "contact.email": "郵箱",
+      "contact.linkedin": "樊浩瑋",
+      "contact.form.name": "姓名",
+      "contact.form.email": "你的郵箱",
+      "contact.form.message": "留言",
+      "contact.form.submit": "發送",
+      "contact.form.mailto": "直接發郵件",
+      "contact.form.placeholder":
+        "表單暫未接入後端。請直接發郵件至 hwfan0930@gmail.com，感謝聯繫！",
+      "contact.form.validation": "請填寫完整信息，並使用有效郵箱地址。",
+      "contact.form.errName": "請填寫姓名。",
+      "contact.form.errEmail": "請填寫有效的郵箱地址。",
+      "contact.form.errMessage": "請填寫留言內容。",
+
+      "footer.copy": "© 2026 樊浩瑋. 保留所有權利。",
+      "footer.credit":
+        '本頁面由 <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> 生成 · 設計系統參考 <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
+      "footer.updated": "最近更新：2026 年 7 月",
+      documentTitle: "樊浩瑋 · 個人主頁",
+    },
+
     ja: {
       skip: "メインコンテンツへスキップ",
       brand: "樊浩玮",
@@ -495,7 +695,7 @@
       "about.label": "About",
       "about.title": "プロフィール",
       "about.body":
-        "理論物理学の博士課程3年目（来年修了予定）で、確率過程、高性能科学計算、大規模な Python / MATLAB モデリングの背景を持っています。最近、プライベート・エクイティ投資会社に研究インターンとして加わり、PE関連のリサーチに従事しています。博士課程で培った構造化された分析、複雑な問題の分解、データとモデルから明確な結論を導く力を、産業・投資リサーチに活かしています。今後はプライベート・エクイティおよび投資リサーチの方向でキャリアを築いていきたいと考えています。",
+        "理論物理学の博士課程に在籍しています。研究背景は量子理論、低次元系、確率過程、高性能科学計算、大規模な Python / MATLAB モデリングに及びます。博士課程で培った構造化された分析、複雑な問題の分解、データとモデルから明確な結論を導く力を、産業・投資リサーチに活かしています。今後はプライベート・エクイティおよび投資リサーチの方向でさらに深めていきたいと考えています。",
 
       "experience.label": "キャリア",
       "experience.title": "職歴",
@@ -630,7 +830,18 @@
       /* ignore */
     }
     const nav = (navigator.language || navigator.userLanguage || "en").toLowerCase();
-    if (nav.startsWith("zh")) return "zh";
+    if (nav.startsWith("zh")) {
+      // Traditional: Taiwan, Hong Kong, Macau, or explicit Hant
+      if (
+        nav.includes("tw") ||
+        nav.includes("hk") ||
+        nav.includes("mo") ||
+        nav.includes("hant")
+      ) {
+        return "zh-Hant";
+      }
+      return "zh";
+    }
     if (nav.startsWith("ja")) return "ja";
     return "en";
   }
@@ -642,6 +853,7 @@
 
   function htmlLang(lang) {
     if (lang === "zh") return "zh-Hans";
+    if (lang === "zh-Hant") return "zh-Hant";
     if (lang === "ja") return "ja";
     return "en";
   }
@@ -713,7 +925,7 @@
     const brandEn = document.querySelector(".nav-brand-en");
     const brandZh = document.querySelector(".nav-brand-zh");
     if (brandEn && brandZh) {
-      if (lang === "zh" || lang === "ja") {
+      if (lang === "zh" || lang === "zh-Hant" || lang === "ja") {
         brandEn.hidden = true;
         brandZh.hidden = false;
         brandZh.textContent = t("brand", lang);

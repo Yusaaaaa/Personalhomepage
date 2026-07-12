@@ -368,9 +368,9 @@ input[type="submit"],
   font: inherit;
   font-size: 12px;
   font-weight: 500;
-  min-width: 32px;
+  min-width: 28px;
   min-height: 28px;
-  padding: 4px 8px;
+  padding: 4px 7px;
   border-radius: var(--radius-pill);
   transition: background var(--duration) var(--ease),
     color var(--duration) var(--ease);
