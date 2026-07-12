@@ -30,7 +30,7 @@
       "aiViews.label": "AI",
       "aiViews.title": "AI-Assisted Insights",
       "aiViews.desc":
-        "AI-assisted observations on industries and the world — newest first.",
+        "AI-assisted observations on industries and the world.",
       "aiViews.descHome":
         "Latest AI-assisted insights. Open any card for the full piece.",
       "aiViews.viewAll": "View all",
@@ -46,7 +46,7 @@
 
       "writing.label": "Essays",
       "writing.title": "Essays",
-      "writing.desc": "Personal essays and short pieces — newest first.",
+      "writing.desc": "Personal essays and short pieces.",
       "writing.descHome":
         "Latest personal essays. Open any card for the full piece.",
       "writing.viewAll": "View all essays",
@@ -62,7 +62,7 @@
 
       "notes.label": "Notes",
       "notes.title": "Notes",
-      "notes.desc": "Study notes and learning logs — newest first.",
+      "notes.desc": "Study notes and learning logs.",
       "notes.descHome":
         "Latest study notes. Open any card for the full piece.",
       "notes.viewAll": "View all notes",
@@ -234,7 +234,7 @@
 
       "aiViews.label": "AI",
       "aiViews.title": "AI辅助-对世界的洞察",
-      "aiViews.desc": "用 AI 辅助梳理的行业与世界观察 — 按日期从新到旧排列。",
+      "aiViews.desc": "用 AI 辅助梳理的行业与世界观察。",
       "aiViews.descHome": "最新 AI 辅助洞察。点击卡片阅读全文。",
       "aiViews.viewAll": "查看全部",
       "aiViews.readMore": "阅读全文 →",
@@ -249,7 +249,7 @@
 
       "writing.label": "随笔",
       "writing.title": "随笔",
-      "writing.desc": "个人短文与随想 — 按日期从新到旧排列。",
+      "writing.desc": "个人短文与随想。",
       "writing.descHome": "最新随笔。点击卡片阅读全文。",
       "writing.viewAll": "查看全部",
       "writing.readMore": "阅读全文 →",
@@ -264,7 +264,7 @@
 
       "notes.label": "笔记",
       "notes.title": "笔记",
-      "notes.desc": "学习笔记与摘录 — 按日期从新到旧排列。",
+      "notes.desc": "学习笔记与摘录。",
       "notes.descHome": "最新学习笔记。点击卡片阅读全文。",
       "notes.viewAll": "查看全部",
       "notes.readMore": "阅读全文 →",
@@ -434,7 +434,7 @@
 
       "aiViews.label": "AI",
       "aiViews.title": "AIで読み解く世界",
-      "aiViews.desc": "AIを活用した産業・世界の観察 — 新しい順。",
+      "aiViews.desc": "AIを活用した産業・世界の観察。",
       "aiViews.descHome":
         "最新のAI洞察。カードを開くと全文を読めます。",
       "aiViews.viewAll": "すべて見る",
@@ -451,7 +451,7 @@
 
       "writing.label": "エッセイ",
       "writing.title": "エッセイ",
-      "writing.desc": "個人のエッセイと短文 — 新しい順。",
+      "writing.desc": "個人のエッセイと短文。",
       "writing.descHome":
         "最新のエッセイ。カードを開くと全文を読めます。",
       "writing.viewAll": "すべて見る",
@@ -468,7 +468,7 @@
 
       "notes.label": "ノート",
       "notes.title": "ノート",
-      "notes.desc": "学習ノートとメモ — 新しい順。",
+      "notes.desc": "学習ノートとメモ。",
       "notes.descHome":
         "最新の学習ノート。カードを開くと全文を読めます。",
       "notes.viewAll": "すべて見る",
