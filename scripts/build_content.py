@@ -14,6 +14,7 @@ COLLECTIONS = {
     "ai_views": {"dir": "AI_views", "out": "data/ai-views-index.json"},
     "writing": {"dir": "writing", "out": "data/writing-index.json"},
     "notes": {"dir": "notes", "out": "data/notes-index.json"},
+    "updates": {"dir": "updates", "out": "data/updates-index.json"},
 }
 
 SKIP_NAMES = {"readme.md"}
