@@ -1,6 +1,6 @@
 /**
  * Multi-collection content: homepage top 5 / full list / single post
- * Collections: ai_views | writing | notes | updates
+ * Collections: ai_views | writing | notes
  */
 (function () {
   "use strict";
@@ -34,15 +34,6 @@
       homeListId: "notesHomeList",
       fullListId: "notesFullList",
       navSelector: '[data-nav-collection="notes"]',
-    },
-    updates: {
-      id: "updates",
-      index: "data/updates-index.json",
-      listPage: "updates.html",
-      i18n: "updates",
-      homeListId: "updatesHomeList",
-      fullListId: "updatesFullList",
-      navSelector: '[data-nav-collection="updates"]',
     },
   };
 

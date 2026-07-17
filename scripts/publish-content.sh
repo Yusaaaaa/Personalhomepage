@@ -10,14 +10,13 @@ usage() {
 Usage:
   ./scripts/publish-content.sh [collection] [commit message]
 
-Collections: ai_views | writing | notes | updates | all  (default: all)
+Collections: ai_views | writing | notes | all  (default: all)
 
 Examples:
   ./scripts/publish-content.sh
   ./scripts/publish-content.sh ai_views
   ./scripts/publish-content.sh writing "writing: add essay"
   ./scripts/publish-content.sh notes "notes: study log"
-  ./scripts/publish-content.sh updates "updates: add note"
 EOF
 }
 
@@ -45,14 +44,9 @@ case "$COLLECTION" in
     INDEXES=(data/notes-index.json)
     DEFAULT_MSG="notes: update"
     ;;
-  updates)
-    DIRS=(updates)
-    INDEXES=(data/updates-index.json)
-    DEFAULT_MSG="updates: update"
-    ;;
   all)
-    DIRS=(AI_views writing notes updates)
-    INDEXES=(data/ai-views-index.json data/writing-index.json data/notes-index.json data/updates-index.json)
+    DIRS=(AI_views writing notes)
+    INDEXES=(data/ai-views-index.json data/writing-index.json data/notes-index.json)
     DEFAULT_MSG="content: update collections"
     ;;
   *)

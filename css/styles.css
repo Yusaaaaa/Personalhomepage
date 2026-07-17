@@ -733,6 +733,54 @@ input[type="submit"],
   max-width: 65ch;
 }
 
+/* Updates — simple date + note + links */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.75rem 1.25rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.news-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.news-date {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.news-body a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.news-body a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+
 /* Writing / notes */
 .writing-list {
   display: flex;

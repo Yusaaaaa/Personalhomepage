@@ -9,12 +9,11 @@ Design decisions are documented in `design-system/MASTER.md`, informed by [ui-ux
 | Path | Description |
 |------|-------------|
 | `index.html` | Page structure |
-| `ai-views.html` / `writing.html` / `notes.html` / `updates.html` | Full list pages |
+| `ai-views.html` / `writing.html` / `notes.html` | Full list pages |
 | `post.html` | Single article (`?collection=&slug=`) |
 | `AI_views/*.md` | AI-assisted world insights |
 | `writing/*.md` | Personal essays |
 | `notes/*.md` | Study notes |
-| `updates/*.md` | Personal updates / activity |
 | `data/*-index.json` | Generated indexes (newest first) |
 | `scripts/build_content.py` | Rebuild all (or one) content index |
 | `scripts/publish-content.sh` | Build index + commit + push one/all collections |
@@ -65,13 +64,13 @@ Also works on Cloudflare Pages, Netlify, or Vercel as a static site (no build co
 - EN / 中 / 日 language toggle (remembers preference; defaults from browser)
 - Responsive layout, frosted navigation, scroll reveal
 - Contact form UI only — submit shows a “please email me” message; use **Email directly** for `mailto:`
-- **Four content rails**: homepage shows latest 5 each; full list + article pages; content from Markdown folders
+- **Updates** on the homepage: a simple date + note + links list (edit in `index.html` under `#updates`)
+- **Three content rails** (AI / essays / notes): homepage shows latest 5 each; full list + article pages from Markdown
 
 ## Content collections
 
 | Section (中文) | Folder | List page | Publish |
 |----------------|--------|-----------|---------|
-| 动态 | `updates/` | `updates.html` | `./scripts/publish-content.sh updates` |
 | AI辅助-对世界的洞察 | `AI_views/` | `ai-views.html` | `./scripts/publish-content.sh ai_views` |
 | 随笔 | `writing/` | `writing.html` | `./scripts/publish-content.sh writing` |
 | 笔记 | `notes/` | `notes.html` | `./scripts/publish-content.sh notes` |
@@ -91,12 +90,20 @@ Body in Markdown…
 2. Publish (rebuild index, commit that collection only, push):
 
 ```bash
-./scripts/publish-content.sh updates
 ./scripts/publish-content.sh ai_views
 ./scripts/publish-content.sh writing "writing: add essay"
 ./scripts/publish-content.sh notes
-# all:
+# all three:
 ./scripts/publish-content.sh
+```
+
+**动态（Updates）** 不走 Markdown 流水线。在 `index.html` 的 `#updates` 列表里按 Ozawa 风格加一行即可：
+
+```html
+<li class="news-item">
+  <strong class="news-date"><time datetime="2026-07-14">2026-07-14</time></strong>
+  <span class="news-body">一句话事件 <a href="…">链接</a></span>
+</li>
 ```
 
 Local only (no push): `python3 scripts/build_content.py` then `python3 -m http.server 8080`.

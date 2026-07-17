@@ -31,7 +31,7 @@
       <div class="nav-menu" id="navMenu">
         <ul class="nav-links">
           <li><a href="#about" data-i18n="nav.about">About</a></li>
-          <li><a href="#updates" data-i18n="nav.updates" data-nav-collection="updates">Updates</a></li>
+          <li><a href="#updates" data-i18n="nav.updates">Updates</a></li>
           <li><a href="#ai-views" data-i18n="nav.aiViews" data-nav-collection="ai_views">AI Views</a></li>
           <li><a href="#writing" data-i18n="nav.writing" data-nav-collection="writing">Essays</a></li>
           <li><a href="#notes" data-i18n="nav.notes" data-nav-collection="notes">Notes</a></li>
@@ -99,22 +99,19 @@
       </div>
     </section>
 
-    <!-- Updates -->
+    <!-- Updates — simple date + note + links (Ozawa-style "What's new") -->
     <section class="section section-alt" id="updates" aria-labelledby="updates-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="updates.label">Updates</p>
           <h2 class="section-title" id="updates-title" data-i18n="updates.title">Updates</h2>
-          <p class="section-desc" data-i18n="updates.descHome">
-            Latest updates. Open a card for links and details.
-          </p>
         </header>
-        <div class="writing-list" id="updatesHomeList" aria-live="polite">
-          <p class="writing-empty" data-i18n="updates.loading">Loading…</p>
-        </div>
-        <div class="writing-footer reveal">
-          <a class="btn btn-secondary" href="updates.html" data-i18n="updates.viewAll">View all updates</a>
-        </div>
+        <ul class="news-list reveal">
+          <li class="news-item">
+            <strong class="news-date"><time datetime="2026-07-14">2026-07-14</time></strong>
+            <span class="news-body">给来香港城市大学物理系访问的中国矿业大学24级本科生介绍了工作 <a href="https://arxiv.org/abs/2601.00062" target="_blank" rel="noopener noreferrer">arXiv:2601.00062</a> · <a href="assets/talk-2601.00062.pdf" target="_blank" rel="noopener noreferrer">Slides</a></span>
+          </li>
+        </ul>
       </div>
     </section>
 
