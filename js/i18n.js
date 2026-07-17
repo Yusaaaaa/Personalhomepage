@@ -79,7 +79,7 @@
 
       "updates.label": "News",
       "updates.title": "Updates",
-      "updates.desc": "All updates — newest first.",
+      "updates.desc": "Personal activities and recent notes.",
       "updates.viewAll": "View all updates",
       "updates.empty": "No updates yet.",
       "updates.loading": "Loading…",
@@ -302,7 +302,7 @@
 
       "updates.label": "近况",
       "updates.title": "动态",
-      "updates.desc": "全部动态，从新到旧。",
+      "updates.desc": "个人活动与近况",
       "updates.viewAll": "查看全部动态",
       "updates.empty": "暂无动态。",
       "updates.loading": "加载中…",
@@ -523,7 +523,7 @@
 
       "updates.label": "近況",
       "updates.title": "動態",
-      "updates.desc": "全部動態，從新到舊。",
+      "updates.desc": "個人活動與近況",
       "updates.viewAll": "查看全部動態",
       "updates.empty": "暫無動態。",
       "updates.loading": "加載中…",
@@ -750,7 +750,7 @@
 
       "updates.label": "近況",
       "updates.title": "近況",
-      "updates.desc": "すべての近況（新しい順）。",
+      "updates.desc": "個人の活動と近況",
       "updates.viewAll": "すべての近況を見る",
       "updates.empty": "まだ近況がありません。",
       "updates.loading": "読み込み中…",
