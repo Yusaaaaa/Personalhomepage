@@ -774,6 +774,18 @@ input[type="submit"],
   text-decoration: underline;
 }
 
+.news-empty {
+  list-style: none;
+  padding: 1rem 0;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.news-link-sep {
+  color: var(--text-tertiary);
+  margin: 0 0.15em;
+}
+
 @media (max-width: 560px) {
   .news-item {
     grid-template-columns: 1fr;

@@ -64,7 +64,7 @@ Also works on Cloudflare Pages, Netlify, or Vercel as a static site (no build co
 - EN / 中 / 日 language toggle (remembers preference; defaults from browser)
 - Responsive layout, frosted navigation, scroll reveal
 - Contact form UI only — submit shows a “please email me” message; use **Email directly** for `mailto:`
-- **Updates** on the homepage: a simple date + note + links list (edit in `index.html` under `#updates`)
+- **Updates**: date + note + links list in `data/updates.json` — homepage shows latest **10**; full list on `updates.html` (with “View all” when there are more than 10)
 - **Three content rails** (AI / essays / notes): homepage shows latest 5 each; full list + article pages from Markdown
 
 ## Content collections
@@ -97,13 +97,17 @@ Body in Markdown…
 ./scripts/publish-content.sh
 ```
 
-**动态（Updates）** 不走 Markdown 流水线。在 `index.html` 的 `#updates` 列表里按 Ozawa 风格加一行即可：
+**动态（Updates）** 编辑 `data/updates.json`（按日期从新到旧会自动排序）。主页最多显示 10 条，更多请打开 `updates.html`。
 
-```html
-<li class="news-item">
-  <strong class="news-date"><time datetime="2026-07-14">2026-07-14</time></strong>
-  <span class="news-body">一句话事件 <a href="…">链接</a></span>
-</li>
+```json
+{
+  "date": "2026-07-14",
+  "text": "一句话事件",
+  "links": [
+    { "label": "arXiv:2601.00062", "href": "https://arxiv.org/abs/2601.00062" },
+    { "label": "Slides", "href": "assets/talk-2601.00062.pdf" }
+  ]
+}
 ```
 
 Local only (no push): `python3 scripts/build_content.py` then `python3 -m http.server 8080`.

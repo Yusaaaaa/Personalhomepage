@@ -99,19 +99,19 @@
       </div>
     </section>
 
-    <!-- Updates — simple date + note + links (Ozawa-style "What's new") -->
+    <!-- Updates — simple date + note + links; home shows latest 10 -->
     <section class="section section-alt" id="updates" aria-labelledby="updates-title">
       <div class="container">
         <header class="section-header reveal">
           <p class="section-label" data-i18n="updates.label">Updates</p>
           <h2 class="section-title" id="updates-title" data-i18n="updates.title">Updates</h2>
         </header>
-        <ul class="news-list reveal">
-          <li class="news-item">
-            <strong class="news-date"><time datetime="2026-07-14">2026-07-14</time></strong>
-            <span class="news-body">给来香港城市大学物理系访问的中国矿业大学24级本科生介绍了工作 <a href="https://arxiv.org/abs/2601.00062" target="_blank" rel="noopener noreferrer">arXiv:2601.00062</a> · <a href="assets/talk-2601.00062.pdf" target="_blank" rel="noopener noreferrer">Slides</a></span>
-          </li>
+        <ul class="news-list reveal" id="updatesHomeList" aria-live="polite">
+          <li class="news-empty" data-i18n="updates.loading">Loading…</li>
         </ul>
+        <div class="writing-footer reveal" id="updatesHomeFooter" hidden>
+          <a class="btn btn-secondary" href="updates.html" data-i18n="updates.viewAll">View all updates</a>
+        </div>
       </div>
     </section>
 
@@ -492,5 +492,6 @@
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script src="js/writing.js"></script>
+  <script src="js/updates.js"></script>
 </body>
 </html>

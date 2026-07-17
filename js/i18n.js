@@ -79,6 +79,13 @@
 
       "updates.label": "News",
       "updates.title": "Updates",
+      "updates.desc": "All updates — newest first.",
+      "updates.viewAll": "View all updates",
+      "updates.empty": "No updates yet.",
+      "updates.loading": "Loading…",
+      "updates.error": "Could not load updates. Try again later.",
+      "updates.backHome": "← Back to home",
+      documentTitleUpdates: "Updates · Haowei Fan",
 
       "hero.eyebrow": "PhD Candidate · Private Equity Research Intern",
       "hero.name": "Haowei Fan",
@@ -295,6 +302,13 @@
 
       "updates.label": "近况",
       "updates.title": "动态",
+      "updates.desc": "全部动态，从新到旧。",
+      "updates.viewAll": "查看全部动态",
+      "updates.empty": "暂无动态。",
+      "updates.loading": "加载中…",
+      "updates.error": "无法加载动态，请稍后再试。",
+      "updates.backHome": "← 返回主页",
+      documentTitleUpdates: "动态 · 樊浩玮",
 
       "hero.eyebrow": "博士研究生 · 私募股权研究实习生",
       "hero.name": "樊浩玮",
@@ -509,6 +523,13 @@
 
       "updates.label": "近況",
       "updates.title": "動態",
+      "updates.desc": "全部動態，從新到舊。",
+      "updates.viewAll": "查看全部動態",
+      "updates.empty": "暫無動態。",
+      "updates.loading": "加載中…",
+      "updates.error": "無法加載動態，請稍後再試。",
+      "updates.backHome": "← 返回主頁",
+      documentTitleUpdates: "動態 · 樊浩瑋",
 
       "hero.eyebrow": "博士研究生 · 私募股權研究實習生",
       "hero.name": "樊浩瑋",
@@ -729,6 +750,14 @@
 
       "updates.label": "近況",
       "updates.title": "近況",
+      "updates.desc": "すべての近況（新しい順）。",
+      "updates.viewAll": "すべての近況を見る",
+      "updates.empty": "まだ近況がありません。",
+      "updates.loading": "読み込み中…",
+      "updates.error":
+        "近況を読み込めませんでした。後でもう一度お試しください。",
+      "updates.backHome": "← ホームへ戻る",
+      documentTitleUpdates: "近況 · 樊浩玮",
 
       "hero.eyebrow": "博士課程 · プライベート・エクイティ研究インターン",
       "hero.name": "樊浩玮",
