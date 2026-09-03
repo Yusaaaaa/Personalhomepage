@@ -103,7 +103,7 @@
 
       "experience.label": "Career",
       "experience.title": "Experience",
-      "exp.yunrui.date": "August 2026 – October 2026",
+      "exp.yunrui.date": "July 2026 – October 2026",
       "exp.yunrui.role": "Investment Research Intern",
       "exp.yunrui.org": "Yunrui Capital, Shenzhen",
       "exp.yunrui.b1":
@@ -339,7 +339,7 @@
 
       "experience.label": "职业",
       "experience.title": "工作经历",
-      "exp.yunrui.date": "2026 年 8 月 – 2026 年 10 月",
+      "exp.yunrui.date": "2026 年 7 月 – 2026 年 10 月",
       "exp.yunrui.role": "投研部实习生",
       "exp.yunrui.org": "云睿资本（深圳）",
       "exp.yunrui.b1":
@@ -574,7 +574,7 @@
 
       "experience.label": "職業",
       "experience.title": "工作經歷",
-      "exp.yunrui.date": "2026 年 8 月 – 2026 年 10 月",
+      "exp.yunrui.date": "2026 年 7 月 – 2026 年 10 月",
       "exp.yunrui.role": "投研部實習生",
       "exp.yunrui.org": "雲睿資本（深圳）",
       "exp.yunrui.b1":
@@ -817,7 +817,7 @@
 
       "experience.label": "キャリア",
       "experience.title": "職歴",
-      "exp.yunrui.date": "2026年8月 – 2026年10月",
+      "exp.yunrui.date": "2026年7月 – 2026年10月",
       "exp.yunrui.role": "投資リサーチインターン",
       "exp.yunrui.org": "雲睿資本（深圳）",
       "exp.yunrui.b1":
