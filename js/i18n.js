@@ -87,10 +87,10 @@
       "updates.backHome": "← Back to home",
       documentTitleUpdates: "Updates · Haowei Fan",
 
-      "hero.eyebrow": "PhD Candidate · Private Equity Research Intern",
+      "hero.eyebrow": "PhD Candidate · Theoretical Physics",
       "hero.name": "Haowei Fan",
       "hero.subtitle":
-        "Investment research · Analytical rigor · From physics to private equity",
+        "From quantum physics to the real world",
       "hero.lead":
         "PhD student in Theoretical Physics. I hope to use knowledge and cognition as leverage in financial markets — expanding personal boundaries and breaking through in value creation.",
       "hero.ctaProjects": "View Projects",
@@ -99,10 +99,19 @@
       "about.label": "About",
       "about.title": "Profile",
       "about.body":
-        "I am a PhD student in Theoretical Physics. My research background spans quantum theory, low-dimensional systems, stochastic processes, high-performance scientific computing, and large-scale Python/MATLAB modeling. Doctoral training has shaped strong skills in structured analysis, breaking down complex problems, and drawing clear conclusions from data and models — capabilities I now apply to industry and investment research. Looking ahead, I hope to continue deepening my work in private equity and related investment research.",
+        "I am a PhD candidate in Theoretical Physics. My research spans quantum theory, low-dimensional systems, stochastic processes, high-performance scientific computing, and large-scale Python/MATLAB modeling. That training — structured analysis, breaking down complex problems, and turning data and models into clear conclusions — is what I now bring to industry research, financial markets, and other real-world questions.",
 
       "experience.label": "Career",
       "experience.title": "Experience",
+      "exp.yunrui.date": "August 2026 – October 2026",
+      "exp.yunrui.role": "Investment Research Intern",
+      "exp.yunrui.org": "Yunrui Capital, Shenzhen",
+      "exp.yunrui.b1":
+        "Built ABS cash-flow waterfall models and ran IRR, sensitivity, and scenario analysis for investment review.",
+      "exp.yunrui.b2":
+        "Explored generative-AI applications in research workflows and built an internal news-push tool.",
+      "exp.yunrui.b3":
+        "Worked on post-Pre-A due diligence: comparable-company analysis, multiples-based valuation with revenue forecasts, on-site interviews, and a full DD report.",
       "exp.ngi.date": "June 2025 – November 2025",
       "exp.ngi.role": "Visiting Scholar",
       "exp.ngi.org": "National Graphene Institute, UK",
@@ -113,14 +122,19 @@
       "exp.ngi.b3":
         "Studied different Hartree corrections for two-dimensional systems theoretically.",
       "exp.pwc.date": "August 2021 – July 2022",
-      "exp.pwc.role": "Audit",
+      "exp.pwc.role": "Financial Audit",
       "exp.pwc.org": "PwC Shanghai",
       "exp.pwc.b1":
-        "Performed statistical sampling, analytical review, and large-scale data validation for public and private fund clients.",
+        "Performed company and fund audits for public and private fund clients, including capital verification for newly raised funds.",
       "exp.pwc.b2":
-        "Evaluated risk-control and compliance frameworks, gaining exposure to financial reporting and regulatory processes.",
+        "Worked on year-end audits and fund reports for large engagements including Penghua Fund, Morgan Stanley Huaxin Fund, and Haitong Securities.",
       "exp.pwc.b3":
-        "Collaborated with cross-functional teams to deliver data-driven audit assessments.",
+        "Evaluated risk-control and compliance frameworks, gaining exposure to financial reporting and regulatory processes.",
+      "exp.orient.date": "October 2018 – February 2019",
+      "exp.orient.role": "Assistant Intern, Custody Department",
+      "exp.orient.org": "Orient Securities, Shanghai",
+      "exp.orient.b1":
+        "Archived fund custody documents — account-opening receipts, fundraising records, and account-closure receipts — and processed custody account opening and closure.",
 
       "education.label": "Academic",
       "education.title": "Education",
@@ -214,7 +228,7 @@
       "contact.label": "Connect",
       "contact.title": "Contact",
       "contact.desc":
-        "Open to conversations about private equity, investment research, and related opportunities.",
+        "Open to conversations about research, markets, and related opportunities.",
       "contact.email": "Email",
       "contact.linkedin": "Haowei Fan",
       "contact.form.name": "Name",
@@ -232,7 +246,7 @@
       "footer.copy": "© 2026 Haowei Fan. All rights reserved.",
       "footer.credit":
         'Built with <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> · Design system informed by <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
-      "footer.updated": "Last updated: July 2026",
+      "footer.updated": "Last updated: September 2026",
       documentTitle: "Haowei Fan · Personal Homepage",
     },
 
@@ -310,9 +324,9 @@
       "updates.backHome": "← 返回主页",
       documentTitleUpdates: "动态 · 樊浩玮",
 
-      "hero.eyebrow": "博士研究生 · 私募股权研究实习生",
+      "hero.eyebrow": "博士研究生 · 理论物理",
       "hero.name": "樊浩玮",
-      "hero.subtitle": "投资研究 · 分析与判断 · 从物理到私募股权",
+      "hero.subtitle": "从量子物理到现实世界",
       "hero.lead":
         "理论物理博士生，希望以知识与认知为杠杆，在金融市场中拓宽个人边界、实现价值突破。",
       "hero.ctaProjects": "查看项目",
@@ -321,10 +335,19 @@
       "about.label": "关于",
       "about.title": "个人简介",
       "about.body":
-        "我是理论物理博士研究生，研究背景涵盖量子理论，低维系统，随机过程、高性能科学计算与大规模 Python / MATLAB 建模。博士训练塑造了结构化分析、复杂问题拆解，以及从数据与模型中提炼清晰结论的能力，我正将这些能力应用到行业与投资研究中。未来希望在私募股权及投资研究相关方向持续深耕。",
+        "我是理论物理博士研究生，研究背景涵盖量子理论、低维系统、随机过程、高性能科学计算与大规模 Python / MATLAB 建模。博士训练塑造了结构化分析、复杂问题拆解，以及从数据与模型中提炼清晰结论的能力。我正把这些能力带到行业研究、金融市场，以及更广阔的现实问题之中。",
 
       "experience.label": "职业",
       "experience.title": "工作经历",
+      "exp.yunrui.date": "2026 年 8 月 – 2026 年 10 月",
+      "exp.yunrui.role": "投研部实习生",
+      "exp.yunrui.org": "云睿资本（深圳）",
+      "exp.yunrui.b1":
+        "搭建 ABS 现金流瀑布模型，完成 IRR、敏感性分析与情景分析，用于投资评审。",
+      "exp.yunrui.b2":
+        "探索生成式 AI 在研究工作中的应用，并搭建内部新闻推送工具。",
+      "exp.yunrui.b3":
+        "参与 Pre-A 后尽调：可比公司分析、基于收入预测的倍数估值、现场访谈，并撰写完整尽调报告。",
       "exp.ngi.date": "2025 年 6 月 – 2025 年 11 月",
       "exp.ngi.role": "访问学者",
       "exp.ngi.org": "英国国家石墨烯研究所（National Graphene Institute）",
@@ -335,14 +358,19 @@
       "exp.ngi.b3":
         "从理论上研究二维体系中不同形式的 Hartree 修正。",
       "exp.pwc.date": "2021 年 8 月 – 2022 年 7 月",
-      "exp.pwc.role": "审计",
-      "exp.pwc.org": "普华永道上海",
+      "exp.pwc.role": "金融审计",
+      "exp.pwc.org": "普华永道中天会计师事务所（上海）",
       "exp.pwc.b1":
-        "面向公募与私募基金客户开展统计抽样、分析性复核与大规模数据验证。",
+        "对公募与私募基金开展公司审计、基金审计，以及新募集基金验资。",
       "exp.pwc.b2":
-        "评估风险控制与合规框架，积累财务报告与监管流程相关经验。",
+        "参与鹏华基金、摩根士丹利华鑫基金、海通证券等大型项目的年度审计并出具基金报告。",
       "exp.pwc.b3":
-        "与跨职能团队协作，交付数据驱动的审计评估。",
+        "评估风险控制与合规框架，积累财务报告与监管流程相关经验。",
+      "exp.orient.date": "2018 年 10 月 – 2019 年 2 月",
+      "exp.orient.role": "托管部助理实习生",
+      "exp.orient.org": "东方证券股份有限公司（上海）",
+      "exp.orient.b1":
+        "整理归档基金相关原始文档（托管户开户回执、募集信息、销户回执等），并办理基金托管户开户与销户业务。",
 
       "education.label": "学术",
       "education.title": "教育背景",
@@ -435,7 +463,7 @@
       "contact.label": "联系",
       "contact.title": "与我联系",
       "contact.desc":
-        "欢迎就私募股权、投资研究及相关机会交流。",
+        "欢迎就研究、市场及相关机会交流。",
       "contact.email": "邮箱",
       "contact.linkedin": "樊浩玮",
       "contact.form.name": "姓名",
@@ -453,7 +481,7 @@
       "footer.copy": "© 2026 樊浩玮. 保留所有权利。",
       "footer.credit":
         '本页面由 <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> 生成 · 设计系统参考 <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
-      "footer.updated": "最近更新：2026 年 7 月",
+      "footer.updated": "最近更新：2026 年 9 月",
       documentTitle: "樊浩玮 · 个人主页",
     },
 
@@ -531,9 +559,9 @@
       "updates.backHome": "← 返回主頁",
       documentTitleUpdates: "動態 · 樊浩瑋",
 
-      "hero.eyebrow": "博士研究生 · 私募股權研究實習生",
+      "hero.eyebrow": "博士研究生 · 理論物理",
       "hero.name": "樊浩瑋",
-      "hero.subtitle": "投資研究 · 分析與判斷 · 從物理到私募股權",
+      "hero.subtitle": "從量子物理到現實世界",
       "hero.lead":
         "理論物理博士生，希望以知識與認知為槓桿，在金融市場中拓寬個人邊界、實現價值突破。",
       "hero.ctaProjects": "查看項目",
@@ -542,10 +570,19 @@
       "about.label": "關於",
       "about.title": "個人簡介",
       "about.body":
-        "我是理論物理博士研究生，研究背景涵蓋量子理論，低維系統，隨機過程、高性能科學計算與大規模 Python / MATLAB 建模。博士訓練塑造了結構化分析、複雜問題拆解，以及從數據與模型中提煉清晰結論的能力，我正將這些能力應用到行業與投資研究中。未來希望在私募股權及投資研究相關方向持續深耕。",
+        "我是理論物理博士研究生，研究背景涵蓋量子理論、低維系統、隨機過程、高性能科學計算與大規模 Python / MATLAB 建模。博士訓練塑造了結構化分析、複雜問題拆解，以及從數據與模型中提煉清晰結論的能力。我正把這些能力帶到行業研究、金融市場，以及更廣闊的現實問題之中。",
 
       "experience.label": "職業",
       "experience.title": "工作經歷",
+      "exp.yunrui.date": "2026 年 8 月 – 2026 年 10 月",
+      "exp.yunrui.role": "投研部實習生",
+      "exp.yunrui.org": "雲睿資本（深圳）",
+      "exp.yunrui.b1":
+        "搭建 ABS 現金流瀑布模型，完成 IRR、敏感性分析與情景分析，用於投資評審。",
+      "exp.yunrui.b2":
+        "探索生成式 AI 在研究工作中的應用，並搭建內部新聞推送工具。",
+      "exp.yunrui.b3":
+        "參與 Pre-A 後盡調：可比公司分析、基於收入預測的倍數估值、現場訪談，並撰寫完整盡調報告。",
       "exp.ngi.date": "2025 年 6 月 – 2025 年 11 月",
       "exp.ngi.role": "訪問學者",
       "exp.ngi.org": "英國國家石墨烯研究所（National Graphene Institute）",
@@ -556,14 +593,19 @@
       "exp.ngi.b3":
         "從理論上研究二維體系中不同形式的 Hartree 修正。",
       "exp.pwc.date": "2021 年 8 月 – 2022 年 7 月",
-      "exp.pwc.role": "審計",
-      "exp.pwc.org": "普華永道上海",
+      "exp.pwc.role": "金融審計",
+      "exp.pwc.org": "普華永道中天會計師事務所（上海）",
       "exp.pwc.b1":
-        "面向公募與私募基金客戶開展統計抽樣、分析性覆核與大規模數據驗證。",
+        "對公募與私募基金開展公司審計、基金審計，以及新募集基金驗資。",
       "exp.pwc.b2":
-        "評估風險控制與合規框架，積累財務報告與監管流程相關經驗。",
+        "參與鵬華基金、摩根士丹利華鑫基金、海通證券等大型項目的年度審計並出具基金報告。",
       "exp.pwc.b3":
-        "與跨職能團隊協作，交付數據驅動的審計評估。",
+        "評估風險控制與合規框架，積累財務報告與監管流程相關經驗。",
+      "exp.orient.date": "2018 年 10 月 – 2019 年 2 月",
+      "exp.orient.role": "托管部助理實習生",
+      "exp.orient.org": "東方證券股份有限公司（上海）",
+      "exp.orient.b1":
+        "整理歸檔基金相關原始文檔（托管戶開戶回執、募集信息、銷戶回執等），並辦理基金托管戶開戶與銷戶業務。",
 
       "education.label": "學術",
       "education.title": "教育背景",
@@ -656,7 +698,7 @@
       "contact.label": "聯繫",
       "contact.title": "與我聯繫",
       "contact.desc":
-        "歡迎就私募股權、投資研究及相關機會交流。",
+        "歡迎就研究、市場及相關機會交流。",
       "contact.email": "郵箱",
       "contact.linkedin": "樊浩瑋",
       "contact.form.name": "姓名",
@@ -674,7 +716,7 @@
       "footer.copy": "© 2026 樊浩瑋. 保留所有權利。",
       "footer.credit":
         '本頁面由 <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> 生成 · 設計系統參考 <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
-      "footer.updated": "最近更新：2026 年 7 月",
+      "footer.updated": "最近更新：2026 年 9 月",
       documentTitle: "樊浩瑋 · 個人主頁",
     },
 
@@ -759,10 +801,10 @@
       "updates.backHome": "← ホームへ戻る",
       documentTitleUpdates: "近況 · 樊浩玮",
 
-      "hero.eyebrow": "博士課程 · プライベート・エクイティ研究インターン",
+      "hero.eyebrow": "博士課程 · 理論物理学",
       "hero.name": "樊浩玮",
       "hero.subtitle":
-        "投資リサーチ · 分析力 · 物理学からPEへ",
+        "量子物理から現実世界へ",
       "hero.lead":
         "理論物理学の博士課程に在籍。知識と認知をテコに、金融市場で自らの境界を広げ、価値の突破を目指しています。",
       "hero.ctaProjects": "プロジェクトを見る",
@@ -771,10 +813,19 @@
       "about.label": "About",
       "about.title": "プロフィール",
       "about.body":
-        "理論物理学の博士課程に在籍しています。研究背景は量子理論、低次元系、確率過程、高性能科学計算、大規模な Python / MATLAB モデリングに及びます。博士課程で培った構造化された分析、複雑な問題の分解、データとモデルから明確な結論を導く力を、産業・投資リサーチに活かしています。今後はプライベート・エクイティおよび投資リサーチの方向でさらに深めていきたいと考えています。",
+        "理論物理学の博士課程に在籍しています。研究背景は量子理論、低次元系、確率過程、高性能科学計算、大規模な Python / MATLAB モデリングに及びます。博士課程で培った構造化された分析、複雑な問題の分解、データとモデルから明確な結論を導く力を、産業リサーチ、金融市場、そしてより広い現実の問いに活かしています。",
 
       "experience.label": "キャリア",
       "experience.title": "職歴",
+      "exp.yunrui.date": "2026年8月 – 2026年10月",
+      "exp.yunrui.role": "投資リサーチインターン",
+      "exp.yunrui.org": "雲睿資本（深圳）",
+      "exp.yunrui.b1":
+        "ABS のキャッシュフロー・ウォーターフォールモデルを構築し、投資審査向けに IRR、感応度分析、シナリオ分析を実施。",
+      "exp.yunrui.b2":
+        "研究業務における生成AIの活用を検討し、社内ニュース配信ツールを構築。",
+      "exp.yunrui.b3":
+        "Pre-A 後のデューデリジェンスに参加：類似企業分析、売上予測に基づくマルチプル評価、現地インタビュー、および完全な DD レポートの作成。",
       "exp.ngi.date": "2025年6月 – 2025年11月",
       "exp.ngi.role": "訪問研究員",
       "exp.ngi.org": "英国国立グラフェン研究所（National Graphene Institute）",
@@ -785,14 +836,19 @@
       "exp.ngi.b3":
         "二次元系における異なる Hartree 補正を理論的に検討。",
       "exp.pwc.date": "2021年8月 – 2022年7月",
-      "exp.pwc.role": "監査",
+      "exp.pwc.role": "金融監査",
       "exp.pwc.org": "PwC 上海",
       "exp.pwc.b1":
-        "公募・私募ファンドのクライアントに対し、統計的サンプリング、分析的検討、大規模データ検証を実施。",
+        "公募・私募ファンドの会社監査・ファンド監査、および新規募集ファンドの出資検証を担当。",
       "exp.pwc.b2":
-        "リスク管理・コンプライアンス体制を評価し、財務報告と規制プロセスへの理解を深めた。",
+        "鵬華ファンド、モルガン・スタンレー華鑫ファンド、海通証券などの大型案件の年度監査とファンド報告書作成に参加。",
       "exp.pwc.b3":
-        "クロスファンクショナルなチームと連携し、データ駆動型の監査評価を提供。",
+        "リスク管理・コンプライアンス体制を評価し、財務報告と規制プロセスへの理解を深めた。",
+      "exp.orient.date": "2018年10月 – 2019年2月",
+      "exp.orient.role": "カストディ部門アシスタントインターン",
+      "exp.orient.org": "東方証券（上海）",
+      "exp.orient.b1":
+        "ファンドカストディ関連の原本書類（口座開設回執、募集情報、口座閉鎖回執など）を整理・保管し、カストディ口座の開設・閉鎖手続きを担当。",
 
       "education.label": "学問",
       "education.title": "学歴",
@@ -886,7 +942,7 @@
       "contact.label": "Connect",
       "contact.title": "お問い合わせ",
       "contact.desc":
-        "プライベート・エクイティ、投資リサーチ、および関連する機会についてのご連絡を歓迎します。",
+        "研究、市場、および関連する機会についてのご連絡を歓迎します。",
       "contact.email": "メール",
       "contact.linkedin": "樊浩玮",
       "contact.form.name": "お名前",
@@ -904,7 +960,7 @@
       "footer.copy": "© 2026 樊浩玮. All rights reserved.",
       "footer.credit":
         '<a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> で構築 · デザインは <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a> を参考',
-      "footer.updated": "最終更新：2026年7月",
+      "footer.updated": "最終更新：2026年9月",
       documentTitle: "樊浩玮 · パーソナルホームページ",
     },
   };
