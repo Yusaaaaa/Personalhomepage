@@ -10,7 +10,12 @@
   },
   {
     "date": "2026-07-14",
-    "text": "给来香港城市大学物理系访问的中国矿业大学24级本科生介绍了工作",
+    "text": {
+      "zh": "给来香港城市大学物理系访问的中国矿业大学24级本科生介绍了工作",
+      "zh-Hant": "給來香港城市大學物理系訪問的中國礦業大學24級本科生介紹了工作",
+      "en": "Presented my work to visiting undergraduates (class of 2024) from China University of Mining and Technology at the Department of Physics, City University of Hong Kong",
+      "ja": "香港城市大学物理学科を訪問した中国鉱業大学2024年度学部生に研究を紹介した"
+    },
     "links": [
       {
         "label": "arXiv:2601.00062",
