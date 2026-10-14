@@ -107,8 +107,7 @@
   function cardHtml(cfg, post) {
     const pdf = isPdf(post);
     const href = pdf
-      ? "https://github.com/Yusaaaaa/Personalhomepage/blob/main/" +
-        encodeURI(post.file)
+      ? "https://yusaaaaa.github.io/Personalhomepage/" + encodeURI(post.file)
       : "post.html?collection=" +
         encodeURIComponent(cfg.id) +
         "&slug=" +
