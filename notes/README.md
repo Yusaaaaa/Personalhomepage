@@ -25,7 +25,7 @@ summary: 可选，卡片上显示的一句话
 | `summary` | 否 | 主页 / 列表摘要；缺省取正文前约 120 字 |
 
 - 文件名即 slug：`hello-world.md` → `post.html?collection=notes&slug=hello-world`
-- 也可直接放 `.pdf`。标题、日期、摘要写在同目录 `meta.json`（按文件名索引）；卡片点击会打开 PDF。
+- 也可直接放 `.pdf`。标题、日期、摘要写在同目录 `meta.json`（按文件名索引）；卡片点击会打开 GitHub 仓库里的 PDF。
 - 忽略：`README.md`、`meta.json`、以下划线开头的文件（如 `_draft.md`）
 
 ## 发布到 GitHub
