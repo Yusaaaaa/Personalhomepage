@@ -12,12 +12,45 @@
     return window.HF_I18N ? window.HF_I18N.t(key) : fallback || key;
   }
 
+  function currentLang() {
+    return window.HF_I18N ? window.HF_I18N.getLang() : "en";
+  }
+
   function escapeHtml(str) {
     return String(str)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
+  }
+
+  function pickText(item, lang) {
+    const text = item && item.text;
+    if (text && typeof text === "object") {
+      return (
+        text[lang] ||
+        (lang === "zh-Hant" ? text.zh : "") ||
+        text.en ||
+        text.zh ||
+        ""
+      );
+    }
+    return text || "";
+  }
+
+  /* Escape text, then turn markdown [label](href) into links. */
+  function renderInline(text) {
+    const re = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+    let out = "";
+    let last = 0;
+    let match;
+    while ((match = re.exec(text))) {
+      out += escapeHtml(text.slice(last, match.index));
+      out += linkHtml({ label: match[1], href: match[2] });
+      last = match.index + match[0].length;
+    }
+    out += escapeHtml(text.slice(last));
+    return out;
   }
 
   function sortNewestFirst(items) {
@@ -46,14 +79,14 @@
 
   function itemHtml(item) {
     const date = item.date || "";
-    const text = item.text || "";
+    const text = pickText(item, currentLang());
     const links = Array.isArray(item.links) ? item.links : [];
     const linkPart = links
       .map(linkHtml)
       .filter(Boolean)
       .join(' <span class="news-link-sep">·</span> ');
     const body =
-      escapeHtml(text) +
+      renderInline(text) +
       (linkPart ? (text ? " " : "") + linkPart : "");
     return (
       '<li class="news-item">' +
@@ -146,6 +179,14 @@
     if (document.getElementById("updatesFullList")) {
       renderFull();
     }
+    window.addEventListener("languagechange", function () {
+      if (document.getElementById("updatesHomeList")) {
+        renderHome();
+      }
+      if (document.getElementById("updatesFullList")) {
+        renderFull();
+      }
+    });
   }
 
   if (document.readyState === "loading") {

@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-06",
+    "text": {
+      "zh": "我们贴出了最新的工作：Ultra-small-angle graphene twistronics with monolayer spacers: From interlayer hybridisation and moiré effects to high-temperature magnetotransport oscillations [arXiv:2610.08505](https://arxiv.org/abs/2610.08505)。该研究聚焦带单层 hBN 间隔层的超小角度扭转石墨烯多层体系，通过自洽 Hartree 计算分析了 moiré 能带形成、层间杂化以及位移场调控下的 Lifshitz 转变，并预言了可在较高温度下持续存在的 1/B 周期磁阻振荡。",
+      "zh-Hant": "我們貼出了最新的工作：Ultra-small-angle graphene twistronics with monolayer spacers: From interlayer hybridisation and moiré effects to high-temperature magnetotransport oscillations [arXiv:2610.08505](https://arxiv.org/abs/2610.08505)。該研究聚焦帶單層 hBN 間隔層的超小角度扭轉石墨烯多層體系，通過自洽 Hartree 計算分析了 moiré 能帶形成、層間雜化以及位移場調控下的 Lifshitz 轉變，並預言了可在較高溫度下持續存在的 1/B 週期磁阻振盪。",
+      "en": "We posted our latest work: Ultra-small-angle graphene twistronics with monolayer spacers: From interlayer hybridisation and moiré effects to high-temperature magnetotransport oscillations [arXiv:2610.08505](https://arxiv.org/abs/2610.08505). The study focuses on ultra-small-angle twisted graphene multilayers with a monolayer hBN spacer. Using self-consistent Hartree calculations, we analyse moiré band formation, interlayer hybridisation, and Lifshitz transitions under a displacement field, and predict 1/B-periodic magnetoresistance oscillations that persist to elevated temperatures.",
+      "ja": "最新の研究を公開しました：Ultra-small-angle graphene twistronics with monolayer spacers: From interlayer hybridisation and moiré effects to high-temperature magnetotransport oscillations [arXiv:2610.08505](https://arxiv.org/abs/2610.08505)。単層 hBN スペーサーを挟んだ超小角度ツイストグラフェン多層系に着目し、自己無撞着 Hartree 計算によりモアレバンド形成、層間混成、変位場による Lifshitz 転移を解析し、比較的高い温度でも持続する 1/B 周期の磁気抵抗振動を予言しています。"
+    }
+  },
+  {
     "date": "2026-07-14",
     "text": "给来香港城市大学物理系访问的中国矿业大学24级本科生介绍了工作",
     "links": [

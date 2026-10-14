@@ -110,6 +110,8 @@ Body in Markdown…
 }
 ```
 
+`text` 也可以是按语言的对象（`en` / `zh` / `zh-Hant` / `ja`）。句中链接用 Markdown：`[arXiv:2610.08505](https://arxiv.org/abs/2610.08505)`。
+
 Local only (no push): `python3 scripts/build_content.py` then `python3 -m http.server 8080`.
 
 Article URL shape:

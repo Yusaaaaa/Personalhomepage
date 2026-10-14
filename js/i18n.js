@@ -246,7 +246,7 @@
       "footer.copy": "© 2026 Haowei Fan. All rights reserved.",
       "footer.credit":
         'Built with <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> · Design system informed by <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
-      "footer.updated": "Last updated: September 2026",
+      "footer.updated": "Last updated: October 2026",
       documentTitle: "Haowei Fan · Personal Homepage",
     },
 
@@ -481,7 +481,7 @@
       "footer.copy": "© 2026 樊浩玮. 保留所有权利。",
       "footer.credit":
         '本页面由 <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> 生成 · 设计系统参考 <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
-      "footer.updated": "最近更新：2026 年 9 月",
+      "footer.updated": "最近更新：2026 年 10 月",
       documentTitle: "樊浩玮 · 个人主页",
     },
 
@@ -716,7 +716,7 @@
       "footer.copy": "© 2026 樊浩瑋. 保留所有權利。",
       "footer.credit":
         '本頁面由 <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> 生成 · 設計系統參考 <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
-      "footer.updated": "最近更新：2026 年 9 月",
+      "footer.updated": "最近更新：2026 年 10 月",
       documentTitle: "樊浩瑋 · 個人主頁",
     },
 
@@ -960,7 +960,7 @@
       "footer.copy": "© 2026 樊浩玮. All rights reserved.",
       "footer.credit":
         '<a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> で構築 · デザインは <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a> を参考',
-      "footer.updated": "最終更新：2026年9月",
+      "footer.updated": "最終更新：2026年10月",
       documentTitle: "樊浩玮 · パーソナルホームページ",
     },
   };
