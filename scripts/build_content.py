@@ -16,8 +16,9 @@ COLLECTIONS = {
     "notes": {"dir": "notes", "out": "data/notes-index.json"},
 }
 
-SKIP_NAMES = {"readme.md"}
+SKIP_NAMES = {"readme.md", "meta.json"}
 FRONTMATTER_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n?(.*)\Z", re.DOTALL)
+META_NAME = "meta.json"
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
@@ -48,11 +49,24 @@ def make_summary(meta: dict[str, str], body: str, limit: int = 120) -> str:
     return plain[: limit - 1].rstrip() + "…"
 
 
+def load_sidecar_meta(content_dir: Path) -> dict:
+    path = content_dir / META_NAME
+    if not path.is_file():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as err:
+        print(f"warning: could not read {path}: {err}", file=sys.stderr)
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
 def collect_posts(content_dir: Path, dir_name: str) -> list[dict]:
     if not content_dir.is_dir():
         print(f"warning: {content_dir} does not exist", file=sys.stderr)
         return []
 
+    sidecar = load_sidecar_meta(content_dir)
     posts: list[dict] = []
     for path in sorted(content_dir.glob("*.md")):
         name = path.name
@@ -74,6 +88,28 @@ def collect_posts(content_dir: Path, dir_name: str) -> list[dict]:
                 "title": title,
                 "date": date,
                 "summary": make_summary(meta, body),
+            }
+        )
+
+    for path in sorted(content_dir.glob("*.pdf")):
+        name = path.name
+        extra = sidecar.get(name) or sidecar.get(path.stem) or {}
+        if not isinstance(extra, dict):
+            extra = {}
+        slug = path.stem
+        title = extra.get("title") or slug.replace("-", " ").replace("_", " ")
+        date = str(extra.get("date", "")).strip()
+        if not date:
+            print(f"warning: {dir_name}/{name} has no date; will sort last", file=sys.stderr)
+        summary = str(extra.get("summary", "")).strip()
+        posts.append(
+            {
+                "slug": slug,
+                "file": f"{dir_name}/{name}",
+                "title": title,
+                "date": date,
+                "summary": summary,
+                "type": "pdf",
             }
         )
 

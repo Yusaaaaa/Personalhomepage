@@ -96,25 +96,40 @@
     return { meta, body };
   }
 
+  function isPdf(post) {
+    return (
+      post.type === "pdf" ||
+      /\.pdf$/i.test(post.file || "") ||
+      /\.pdf$/i.test(post.slug || "")
+    );
+  }
+
   function cardHtml(cfg, post) {
-    const href =
-      "post.html?collection=" +
-      encodeURIComponent(cfg.id) +
-      "&slug=" +
-      encodeURIComponent(post.slug);
+    const pdf = isPdf(post);
+    const href = pdf
+      ? encodeURI(post.file)
+      : "post.html?collection=" +
+        encodeURIComponent(cfg.id) +
+        "&slug=" +
+        encodeURIComponent(post.slug);
+    const extraAttrs = pdf
+      ? ' target="_blank" rel="noopener noreferrer"'
+      : "";
+    const moreKey = pdf ? i18nKey(cfg, "openPdf") : i18nKey(cfg, "readMore");
+    const moreFallback = pdf ? "Open PDF →" : "Read more →";
     const date = formatDate(post.date);
     const summary = post.summary
       ? `<p class="writing-card-summary">${escapeHtml(post.summary)}</p>`
       : "";
     return `
-      <a class="writing-card card reveal" href="${href}">
+      <a class="writing-card card reveal" href="${href}"${extraAttrs}>
         <div class="writing-card-meta">
           ${date ? `<time datetime="${escapeHtml(post.date)}">${escapeHtml(date)}</time>` : ""}
         </div>
         <h3 class="writing-card-title">${escapeHtml(post.title)}</h3>
         ${summary}
-        <span class="writing-card-more" data-i18n="${i18nKey(cfg, "readMore")}">${escapeHtml(
-          t(i18nKey(cfg, "readMore"), "Read more →")
+        <span class="writing-card-more" data-i18n="${moreKey}">${escapeHtml(
+          t(moreKey, moreFallback)
         )}</span>
       </a>
     `;

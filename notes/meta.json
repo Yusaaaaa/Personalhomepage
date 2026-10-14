@@ -1,0 +1,27 @@
+{
+  "FOAG-Ch1-范畴论.pdf": {
+    "title": "范畴论（Vakil FOAG 第一章）",
+    "date": "2026-09-09",
+    "summary": "Vakil《The Rising Sea》第一章讲义：范畴、函子、泛性质、Yoneda、极限与伴随。"
+  },
+  "FOAG-Ch2-层.pdf": {
+    "title": "层（Vakil FOAG 第二章）",
+    "date": "2026-09-10",
+    "summary": "Vakil《The Rising Sea》第二章讲义：预层与层、茎与层化、粘接，以及光滑函数等例子。"
+  },
+  "complex-structures.pdf": {
+    "title": "One Real Plane, Many Complex Structures",
+    "date": "2026-10-13",
+    "summary": "A complex structure on a real plane is an operator whose square is minus the identity. We compare structures, lattices, and one-dimensional complex tori."
+  },
+  "kummer-and-anabelian-geometry.pdf": {
+    "title": "Kummer Theory and the First Questions of Anabelian Geometry",
+    "date": "2026-10-13",
+    "summary": "The Galois action on roots defines a cocycle; we prove the Kummer isomorphism and connect it to the first questions of anabelian geometry."
+  },
+  "p-adic-logarithms.pdf": {
+    "title": "The p-adic Logarithm: From Multiplication to Addition",
+    "date": "2026-10-13",
+    "summary": "The p-adic logarithm compares multiplicative principal units with an additive ideal: convergence, the exponential inverse, and Teichmüller representatives."
+  }
+}
