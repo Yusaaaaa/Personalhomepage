@@ -45,11 +45,11 @@ Contrast target: body ≥ 4.5:1 (WCAG AA).
 
 ## Typography
 
-Prefer **Apple system stack** for authentic SF Pro feel:
+Latin uses the system UI stack. Chinese uses **Noto Sans SC** (same CJK face as Goldman Sachs greater-china pages; GS Sans itself is Latin-only and proprietary). The family is listed before Segoe UI so Windows does not font-link missing CJK glyphs to SimSun. Loaded from Google Fonts with a CJK `unicode-range`.
 
 ```css
-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
-  "Segoe UI", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei",
+  -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
 ```
 
 Optional academic pairing (ui-ux-pro-max): Crimson Pro + Atkinson Hyperlegible — not used by default (system fonts load faster, more “Apple”).

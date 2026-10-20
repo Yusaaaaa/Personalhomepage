@@ -49,11 +49,16 @@
   --glass-blur: 20px;
   --glass-saturate: 180%;
 
-  /* Type + layout */
-  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
-    "Segoe UI", "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-    "Hiragino Sans GB", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
-    "Yu Gothic UI", "Yu Gothic", "Meiryo", "Microsoft YaHei", sans-serif;
+  /* Type + layout
+     Noto Sans SC is the CJK face on Goldman Sachs greater-china pages.
+     Keep it (and local CJK faces) ahead of Segoe UI so Windows does not
+     font-link missing CJK glyphs to SimSun. Google Fonts serves Noto with
+     a CJK unicode-range, so Latin still falls through to the system UI. */
+  --font: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", "Microsoft JhengHei UI",
+    "Microsoft JhengHei", "Hiragino Sans", "Yu Gothic UI", "Meiryo",
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --radius: 20px;
   --radius-sm: 12px;
   --radius-lg: 28px;
@@ -207,6 +212,12 @@ body {
   transition: background-color var(--duration-slow) var(--ease),
     color var(--duration-slow) var(--ease);
   touch-action: manipulation;
+}
+
+html:lang(zh-Hans),
+html:lang(zh-Hant),
+html:lang(ja) {
+  letter-spacing: 0;
 }
 
 img {
