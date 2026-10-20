@@ -3,5 +3,20 @@
     "title": "Rebalancing Frequency and Portfolio Weights: AAPL / TSLA",
     "date": "2026-10-20",
     "summary": "A two-dimensional study of rebalancing schedules versus AAPL/TSLA weights on a frozen 2020–2025 sample. Weight dominates the risk profile; frequency changes the path and cost, but is not monotonic."
+  },
+  "02_threshold_partial_rebalancing.pdf": {
+    "title": "Trade Less, Rebalance Selectively",
+    "date": "2026-10-20",
+    "summary": "Threshold triggers and partial corrections on AAPL/TSLA 50/50. A 3.75 pp band with 20% correction cuts holdout trades by about 62%, but holdout CAGR trails weekly 50/50 — an implementation tradeoff, not a free improvement."
+  },
+  "03_time_and_asset_robustness.pdf": {
+    "title": "Does Rebalancing Travel Well?",
+    "date": "2026-10-20",
+    "summary": "Entry dates, holding horizons, and asset pairs. Weekly AAPL/TSLA often beats buy and hold in this sample, yet several ETF pairs show the opposite, especially over five years."
+  },
+  "04_rebalancing_mechanisms.pdf": {
+    "title": "What Does Rebalancing Earn?",
+    "date": "2026-10-20",
+    "summary": "Separates diversification growth from endpoint concentration. A positive diversification term does not guarantee beating buy and hold; the balance of the two effects sets the frictionless terminal advantage."
   }
 }
