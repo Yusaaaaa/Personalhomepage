@@ -1,6 +1,6 @@
 /**
  * Multi-collection content: homepage top 5 / full list / single post
- * Collections: ai_views | writing | notes
+ * Collections: ai_views | writing | notes | quant
  */
 (function () {
   "use strict";
@@ -34,6 +34,15 @@
       homeListId: "notesHomeList",
       fullListId: "notesFullList",
       navSelector: '[data-nav-collection="notes"]',
+    },
+    quant: {
+      id: "quant",
+      index: "data/quant-index.json",
+      listPage: "quant.html",
+      i18n: "quant",
+      homeListId: "quantHomeList",
+      fullListId: "quantFullList",
+      navSelector: '[data-nav-collection="quant"]',
     },
   };
 

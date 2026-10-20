@@ -21,6 +21,7 @@
       "nav.experience": "Experience",
       "nav.education": "Education",
       "nav.publications": "Publications",
+      "nav.quant": "Quant",
       "nav.projects": "Projects",
       "nav.skills": "Skills",
       "nav.achievements": "Achievements",
@@ -77,6 +78,23 @@
       "notes.missingSlug": "No article selected.",
       "notes.notFound": "Article not found.",
       documentTitleNotes: "Notes · Haowei Fan",
+
+      "quant.label": "Quant",
+      "quant.title": "Quant Research",
+      "quant.desc": "Short papers and reports from my quantitative research.",
+      "quant.descHome":
+        "Latest quantitative papers and reports. Open any card for the full piece.",
+      "quant.viewAll": "View all",
+      "quant.readMore": "Read more →",
+      "quant.openPdf": "Open PDF →",
+      "quant.empty": "No quant notes yet.",
+      "quant.loading": "Loading…",
+      "quant.error": "Could not load quant research. Try again later.",
+      "quant.backHome": "← Back to home",
+      "quant.backList": "← All quant research",
+      "quant.missingSlug": "No article selected.",
+      "quant.notFound": "Article not found.",
+      documentTitleQuant: "Quant Research · Haowei Fan",
 
       "updates.label": "News",
       "updates.title": "Updates",
@@ -152,6 +170,24 @@
 
       "projects.label": "Selected Work",
       "projects.title": "Projects",
+      "proj.quantlab.title": "QuantLab — US Equity Backtesting Platform",
+      "proj.quantlab.tag": "Quant · Daily Research · Python",
+      "proj.quantlab.b1":
+        "Built a local, auditable, reproducible daily-frequency research backtester for US equities.",
+      "proj.quantlab.b2":
+        "Pipeline covers data, strategy, fills, ledger, metrics, HTML reports, and run archives.",
+      "proj.quantlab.b3":
+        "Correctness and auditability first: offline sample data, strategy contracts, and frozen inputs.",
+      "proj.quantlab.repo": "GitHub →",
+      "proj.grokui.title": "GrokUI — Desktop Client for Grok Build",
+      "proj.grokui.tag": "Desktop App · Tauri · ACP",
+      "proj.grokui.b1":
+        "Built a desktop client for the official local Grok Build CLI.",
+      "proj.grokui.b2":
+        "Talks to the agent over ACP (grok agent stdio) rather than reimplementing it.",
+      "proj.grokui.b3":
+        "Checks CLI install and sign-in on launch, then opens a session in the last project folder.",
+      "proj.grokui.repo": "GitHub →",
       "proj.multiposition.title":
         "MultiPosition — Multi-Target Co-occurrence Regions",
       "proj.multiposition.tag": "Web Tool · Geospatial · Clustering",
@@ -263,6 +299,7 @@
       "nav.experience": "经历",
       "nav.education": "教育",
       "nav.publications": "论文",
+      "nav.quant": "量化",
       "nav.projects": "项目",
       "nav.skills": "技能",
       "nav.achievements": "成就",
@@ -315,6 +352,22 @@
       "notes.missingSlug": "未选择文章。",
       "notes.notFound": "未找到该文章。",
       documentTitleNotes: "笔记 · 樊浩玮",
+
+      "quant.label": "量化",
+      "quant.title": "量化研究",
+      "quant.desc": "自己的量化小论文与研究报告。",
+      "quant.descHome": "最新量化论文与报告。点击卡片阅读全文。",
+      "quant.viewAll": "查看全部",
+      "quant.readMore": "阅读全文 →",
+      "quant.openPdf": "打开 PDF →",
+      "quant.empty": "暂无内容。",
+      "quant.loading": "加载中…",
+      "quant.error": "无法加载量化研究，请稍后再试。",
+      "quant.backHome": "← 返回主页",
+      "quant.backList": "← 全部量化研究",
+      "quant.missingSlug": "未选择文章。",
+      "quant.notFound": "未找到该文章。",
+      documentTitleQuant: "量化研究 · 樊浩玮",
 
       "updates.label": "近况",
       "updates.title": "动态",
@@ -389,6 +442,23 @@
 
       "projects.label": "精选",
       "projects.title": "项目",
+      "proj.quantlab.title": "QuantLab — 美股量化回测平台",
+      "proj.quantlab.tag": "量化 · 日频研究 · Python",
+      "proj.quantlab.b1":
+        "搭建本地、可审计、可复现的美股日频研究回测系统。",
+      "proj.quantlab.b2":
+        "覆盖数据、策略、成交、账本、指标、HTML 报告与实验归档。",
+      "proj.quantlab.b3":
+        "正确性与可审计性优先：离线样本数据、策略合同校验、冻结输入。",
+      "proj.quantlab.repo": "GitHub →",
+      "proj.grokui.title": "GrokUI — Grok Build 桌面客户端",
+      "proj.grokui.tag": "桌面应用 · Tauri · ACP",
+      "proj.grokui.b1": "为官方本地 Grok Build CLI 编写桌面客户端。",
+      "proj.grokui.b2":
+        "通过 ACP（grok agent stdio）与 agent 通信，不重新实现 agent。",
+      "proj.grokui.b3":
+        "启动时检查 CLI 安装与登录，并在上次项目目录中开启会话。",
+      "proj.grokui.repo": "GitHub →",
       "proj.multiposition.title": "MultiPosition — 多目标共现区域发现",
       "proj.multiposition.tag": "网页工具 · 地理空间 · 聚类",
       "proj.multiposition.b1":
@@ -499,6 +569,7 @@
       "nav.experience": "經歷",
       "nav.education": "教育",
       "nav.publications": "論文",
+      "nav.quant": "量化",
       "nav.projects": "項目",
       "nav.skills": "技能",
       "nav.achievements": "成就",
@@ -551,6 +622,22 @@
       "notes.missingSlug": "未選擇文章。",
       "notes.notFound": "未找到該文章。",
       documentTitleNotes: "筆記 · 樊浩瑋",
+
+      "quant.label": "量化",
+      "quant.title": "量化研究",
+      "quant.desc": "自己的量化小論文與研究報告。",
+      "quant.descHome": "最新量化論文與報告。點擊卡片閱讀全文。",
+      "quant.viewAll": "查看全部",
+      "quant.readMore": "閱讀全文 →",
+      "quant.openPdf": "打開 PDF →",
+      "quant.empty": "暫無內容。",
+      "quant.loading": "加載中…",
+      "quant.error": "無法加載量化研究，請稍後再試。",
+      "quant.backHome": "← 返回主頁",
+      "quant.backList": "← 全部量化研究",
+      "quant.missingSlug": "未選擇文章。",
+      "quant.notFound": "未找到該文章。",
+      documentTitleQuant: "量化研究 · 樊浩瑋",
 
       "updates.label": "近況",
       "updates.title": "動態",
@@ -625,6 +712,23 @@
 
       "projects.label": "精選",
       "projects.title": "項目",
+      "proj.quantlab.title": "QuantLab — 美股量化回測平台",
+      "proj.quantlab.tag": "量化 · 日頻研究 · Python",
+      "proj.quantlab.b1":
+        "搭建本地、可審計、可復現的美股日頻研究回測系統。",
+      "proj.quantlab.b2":
+        "覆蓋數據、策略、成交、賬本、指標、HTML 報告與實驗歸檔。",
+      "proj.quantlab.b3":
+        "正確性與可審計性優先：離線樣本數據、策略合同校驗、凍結輸入。",
+      "proj.quantlab.repo": "GitHub →",
+      "proj.grokui.title": "GrokUI — Grok Build 桌面客戶端",
+      "proj.grokui.tag": "桌面應用 · Tauri · ACP",
+      "proj.grokui.b1": "為官方本地 Grok Build CLI 編寫桌面客戶端。",
+      "proj.grokui.b2":
+        "通過 ACP（grok agent stdio）與 agent 通信，不重新實現 agent。",
+      "proj.grokui.b3":
+        "啟動時檢查 CLI 安裝與登錄，並在上次項目目錄中開啟會話。",
+      "proj.grokui.repo": "GitHub →",
       "proj.multiposition.title": "MultiPosition — 多目標共現區域發現",
       "proj.multiposition.tag": "網頁工具 · 地理空間 · 聚類",
       "proj.multiposition.b1":
@@ -735,6 +839,7 @@
       "nav.experience": "経歴",
       "nav.education": "学歴",
       "nav.publications": "論文",
+      "nav.quant": "クオンツ",
       "nav.projects": "プロジェクト",
       "nav.skills": "スキル",
       "nav.achievements": "実績",
@@ -793,6 +898,24 @@
       "notes.missingSlug": "記事が選択されていません。",
       "notes.notFound": "記事が見つかりません。",
       documentTitleNotes: "ノート · 樊浩玮",
+
+      "quant.label": "クオンツ",
+      "quant.title": "クオンツ研究",
+      "quant.desc": "自身の定量研究メモとレポート。",
+      "quant.descHome":
+        "最新のクオンツ論文とレポート。カードを開くと全文を読めます。",
+      "quant.viewAll": "すべて見る",
+      "quant.readMore": "続きを読む →",
+      "quant.openPdf": "PDF を開く →",
+      "quant.empty": "まだクオンツ研究がありません。",
+      "quant.loading": "読み込み中…",
+      "quant.error":
+        "クオンツ研究を読み込めませんでした。後でもう一度お試しください。",
+      "quant.backHome": "← ホームへ戻る",
+      "quant.backList": "← すべてのクオンツ研究",
+      "quant.missingSlug": "記事が選択されていません。",
+      "quant.notFound": "記事が見つかりません。",
+      documentTitleQuant: "クオンツ研究 · 樊浩玮",
 
       "updates.label": "近況",
       "updates.title": "近況",
@@ -869,6 +992,24 @@
 
       "projects.label": "主な成果",
       "projects.title": "プロジェクト",
+      "proj.quantlab.title": "QuantLab — 米株クオンツ・バックテスト基盤",
+      "proj.quantlab.tag": "クオンツ · 日次研究 · Python",
+      "proj.quantlab.b1":
+        "監査可能で再現可能な、米株の日次リサーチ用バックテスターをローカルに構築。",
+      "proj.quantlab.b2":
+        "データ、戦略、約定、台帳、指標、HTML レポート、実験アーカイブまでを一本化。",
+      "proj.quantlab.b3":
+        "正しさと監査可能性を優先：オフライン標本データ、戦略契約の検証、入力の凍結。",
+      "proj.quantlab.repo": "GitHub →",
+      "proj.grokui.title": "GrokUI — Grok Build デスクトップクライアント",
+      "proj.grokui.tag": "デスクトップアプリ · Tauri · ACP",
+      "proj.grokui.b1":
+        "公式のローカル Grok Build CLI 向けデスクトップクライアントを構築。",
+      "proj.grokui.b2":
+        "ACP（grok agent stdio）で agent と通信し、agent 自体は再実装しない。",
+      "proj.grokui.b3":
+        "起動時に CLI の導入とログインを確認し、前回のプロジェクトフォルダでセッションを開く。",
+      "proj.grokui.repo": "GitHub →",
       "proj.multiposition.title":
         "MultiPosition — 複数ターゲット共起エリア探索",
       "proj.multiposition.tag": "Webツール · 地理空間 · クラスタリング",
@@ -1025,9 +1166,11 @@
       t("aiViews.loading", "Loading…"),
       t("writing.loading", "Loading…"),
       t("notes.loading", "Loading…"),
+      t("quant.loading", "Loading…"),
       t("aiViews.loading", lang),
       t("writing.loading", lang),
       t("notes.loading", lang),
+      t("quant.loading", lang),
     ];
     const loadedPost =
       postTitleEl &&

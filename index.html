@@ -38,6 +38,7 @@
           <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
           <li><a href="#education" data-i18n="nav.education">Education</a></li>
           <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
+          <li><a href="#quant" data-i18n="nav.quant" data-nav-collection="quant">Quant</a></li>
           <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
           <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
           <li><a href="#achievements" data-i18n="nav.achievements">Achievements</a></li>
@@ -284,6 +285,25 @@
       </div>
     </section>
 
+    <!-- Quant research papers / reports -->
+    <section class="section" id="quant" aria-labelledby="quant-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-label" data-i18n="quant.label">Quant</p>
+          <h2 class="section-title" id="quant-title" data-i18n="quant.title">Quant Research</h2>
+          <p class="section-desc" data-i18n="quant.descHome">
+            Latest quantitative papers and reports. Open any card for the full piece.
+          </p>
+        </header>
+        <div class="writing-list" id="quantHomeList" aria-live="polite">
+          <p class="writing-empty" data-i18n="quant.loading">Loading…</p>
+        </div>
+        <div class="writing-footer reveal">
+          <a class="btn btn-secondary" href="quant.html" data-i18n="quant.viewAll">View all</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Projects -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="container">
@@ -292,6 +312,30 @@
           <h2 class="section-title" id="projects-title" data-i18n="projects.title">Projects</h2>
         </header>
         <div class="project-grid">
+          <article class="project-card card reveal">
+            <h3 class="project-title" data-i18n="proj.quantlab.title">QuantLab — US Equity Backtesting Platform</h3>
+            <p class="project-tag" data-i18n="proj.quantlab.tag">Quant · Daily Research · Python</p>
+            <ul class="bullet-list">
+              <li data-i18n="proj.quantlab.b1">Built a local, auditable, reproducible daily-frequency research backtester for US equities.</li>
+              <li data-i18n="proj.quantlab.b2">Pipeline covers data, strategy, fills, ledger, metrics, HTML reports, and run archives.</li>
+              <li data-i18n="proj.quantlab.b3">Correctness and auditability first: offline sample data, strategy contracts, and frozen inputs.</li>
+            </ul>
+            <p class="project-links">
+              <a href="https://github.com/Yusaaaaa/QuantLab" target="_blank" rel="noopener noreferrer" data-i18n="proj.quantlab.repo">GitHub →</a>
+            </p>
+          </article>
+          <article class="project-card card reveal">
+            <h3 class="project-title" data-i18n="proj.grokui.title">GrokUI — Desktop Client for Grok Build</h3>
+            <p class="project-tag" data-i18n="proj.grokui.tag">Desktop App · Tauri · ACP</p>
+            <ul class="bullet-list">
+              <li data-i18n="proj.grokui.b1">Built a desktop client for the official local Grok Build CLI.</li>
+              <li data-i18n="proj.grokui.b2">Talks to the agent over ACP (grok agent stdio) rather than reimplementing it.</li>
+              <li data-i18n="proj.grokui.b3">Checks CLI install and sign-in on launch, then opens a session in the last project folder.</li>
+            </ul>
+            <p class="project-links">
+              <a href="https://github.com/Yusaaaaa/GrokUI" target="_blank" rel="noopener noreferrer" data-i18n="proj.grokui.repo">GitHub →</a>
+            </p>
+          </article>
           <article class="project-card card reveal">
             <h3 class="project-title" data-i18n="proj.multiposition.title">MultiPosition — Multi-Target Co-occurrence Regions</h3>
             <p class="project-tag" data-i18n="proj.multiposition.tag">Web Tool · Geospatial · Clustering</p>

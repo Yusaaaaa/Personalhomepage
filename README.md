@@ -65,7 +65,7 @@ Also works on Cloudflare Pages, Netlify, or Vercel as a static site (no build co
 - Responsive layout, frosted navigation, scroll reveal
 - Contact form UI only — submit shows a “please email me” message; use **Email directly** for `mailto:`
 - **Updates**: date + note + links list in `data/updates.json` — homepage shows latest **10**; full list on `updates.html` (with “View all” when there are more than 10)
-- **Three content rails** (AI / essays / notes): homepage shows latest 5 each; full list + article pages from Markdown
+- **Four content rails** (AI / essays / notes / quant): homepage shows latest 5 each; full list + article pages from Markdown
 
 ## Content collections
 
@@ -74,6 +74,7 @@ Also works on Cloudflare Pages, Netlify, or Vercel as a static site (no build co
 | AI辅助-对世界的洞察 | `AI_views/` | `ai-views.html` | `./scripts/publish-content.sh ai_views` |
 | 随笔 | `writing/` | `writing.html` | `./scripts/publish-content.sh writing` |
 | 笔记 | `notes/` | `notes.html` | `./scripts/publish-content.sh notes` |
+| 量化研究 | `quant/` | `quant.html` | `./scripts/publish-content.sh quant` |
 
 1. Add a Markdown file under the right folder with frontmatter:
 
@@ -93,7 +94,8 @@ Body in Markdown…
 ./scripts/publish-content.sh ai_views
 ./scripts/publish-content.sh writing "writing: add essay"
 ./scripts/publish-content.sh notes
-# all three:
+./scripts/publish-content.sh quant
+# all collections:
 ./scripts/publish-content.sh
 ```
 
