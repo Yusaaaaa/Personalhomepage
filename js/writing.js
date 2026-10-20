@@ -45,6 +45,7 @@
       fullListId: "quantFullList",
       navSelector: '[data-nav-collection="quant"]',
       layout: "compact",
+      groupByDate: true,
     },
   };
 
@@ -132,8 +133,20 @@
     };
   }
 
-  function compactHtml(cfg, post) {
+  function compactTitleLink(cfg, post) {
     const link = postLink(cfg, post);
+    return (
+      '<a href="' +
+      escapeHtml(link.href) +
+      '"' +
+      link.extra +
+      ">" +
+      escapeHtml(post.title || post.slug) +
+      "</a>"
+    );
+  }
+
+  function compactHtml(cfg, post) {
     const date = post.date || "";
     return (
       '<li class="news-item">' +
@@ -142,13 +155,42 @@
       '">' +
       escapeHtml(date) +
       "</time></strong>" +
-      '<span class="news-body"><a href="' +
-      escapeHtml(link.href) +
-      '"' +
-      link.extra +
-      ">" +
-      escapeHtml(post.title || post.slug) +
-      "</a></span></li>"
+      '<span class="news-body">' +
+      compactTitleLink(cfg, post) +
+      "</span></li>"
+    );
+  }
+
+  function groupByDate(posts) {
+    const groups = [];
+    const seen = Object.create(null);
+    posts.forEach(function (post) {
+      const date = post.date || "";
+      if (!seen[date]) {
+        seen[date] = { date: date, posts: [] };
+        groups.push(seen[date]);
+      }
+      seen[date].posts.push(post);
+    });
+    return groups;
+  }
+
+  function compactGroupHtml(cfg, group) {
+    const titles = group.posts
+      .map(function (post) {
+        return compactTitleLink(cfg, post);
+      })
+      .join("<br>");
+    return (
+      '<li class="news-item">' +
+      '<strong class="news-date"><time datetime="' +
+      escapeHtml(group.date) +
+      '">' +
+      escapeHtml(group.date) +
+      "</time></strong>" +
+      '<span class="news-body">' +
+      titles +
+      "</span></li>"
     );
   }
 
@@ -220,9 +262,15 @@
         setEmpty(container, t(i18nKey(cfg, "empty"), "No notes yet."), compact);
         return;
       }
-      container.innerHTML = slice
-        .map((p) => (compact ? compactHtml(cfg, p) : cardHtml(cfg, p)))
-        .join("");
+      if (!compact) {
+        container.innerHTML = slice.map((p) => cardHtml(cfg, p)).join("");
+      } else if (cfg.groupByDate) {
+        container.innerHTML = groupByDate(slice)
+          .map((g) => compactGroupHtml(cfg, g))
+          .join("");
+      } else {
+        container.innerHTML = slice.map((p) => compactHtml(cfg, p)).join("");
+      }
       reapplyI18n(container);
       revealNew(container);
     } catch (err) {
