@@ -34,6 +34,7 @@
       homeListId: "notesHomeList",
       fullListId: "notesFullList",
       navSelector: '[data-nav-collection="notes"]',
+      layout: "compact",
     },
     quant: {
       id: "quant",
@@ -43,6 +44,7 @@
       homeListId: "quantHomeList",
       fullListId: "quantFullList",
       navSelector: '[data-nav-collection="quant"]',
+      layout: "compact",
     },
   };
 
@@ -113,17 +115,48 @@
     );
   }
 
-  function cardHtml(cfg, post) {
-    const pdf = isPdf(post);
-    const href = pdf
-      ? "https://yusaaaaa.github.io/Personalhomepage/" + encodeURI(post.file)
-      : "post.html?collection=" +
+  function postLink(cfg, post) {
+    if (isPdf(post)) {
+      return {
+        href: "https://yusaaaaa.github.io/Personalhomepage/" + encodeURI(post.file),
+        extra: ' target="_blank" rel="noopener noreferrer"',
+      };
+    }
+    return {
+      href:
+        "post.html?collection=" +
         encodeURIComponent(cfg.id) +
         "&slug=" +
-        encodeURIComponent(post.slug);
-    const extraAttrs = pdf
-      ? ' target="_blank" rel="noopener noreferrer"'
-      : "";
+        encodeURIComponent(post.slug),
+      extra: "",
+    };
+  }
+
+  function compactHtml(cfg, post) {
+    const link = postLink(cfg, post);
+    const date = post.date || "";
+    return (
+      '<li class="news-item">' +
+      '<strong class="news-date"><time datetime="' +
+      escapeHtml(date) +
+      '">' +
+      escapeHtml(date) +
+      "</time></strong>" +
+      '<span class="news-body"><a href="' +
+      escapeHtml(link.href) +
+      '"' +
+      link.extra +
+      ">" +
+      escapeHtml(post.title || post.slug) +
+      "</a></span></li>"
+    );
+  }
+
+  function cardHtml(cfg, post) {
+    const link = postLink(cfg, post);
+    const href = link.href;
+    const extraAttrs = link.extra;
+    const pdf = isPdf(post);
     const moreKey = pdf ? i18nKey(cfg, "openPdf") : i18nKey(cfg, "readMore");
     const moreFallback = pdf ? "Open PDF →" : "Read more →";
     const date = formatDate(post.date);
@@ -152,7 +185,12 @@
       .replace(/"/g, "&quot;");
   }
 
-  function setEmpty(el, message) {
+  function setEmpty(el, message, compact) {
+    if (compact) {
+      el.innerHTML =
+        '<li class="news-empty">' + escapeHtml(message) + "</li>";
+      return;
+    }
     el.innerHTML = `<p class="writing-empty">${escapeHtml(message)}</p>`;
   }
 
@@ -177,18 +215,22 @@
       const posts = await loadIndex(cfg);
       const slice =
         typeof limit === "number" ? posts.slice(0, limit) : posts;
+      const compact = cfg.layout === "compact";
       if (!slice.length) {
-        setEmpty(container, t(i18nKey(cfg, "empty"), "No notes yet."));
+        setEmpty(container, t(i18nKey(cfg, "empty"), "No notes yet."), compact);
         return;
       }
-      container.innerHTML = slice.map((p) => cardHtml(cfg, p)).join("");
+      container.innerHTML = slice
+        .map((p) => (compact ? compactHtml(cfg, p) : cardHtml(cfg, p)))
+        .join("");
       reapplyI18n(container);
       revealNew(container);
     } catch (err) {
       console.error(err);
       setEmpty(
         container,
-        t(i18nKey(cfg, "error"), "Could not load content. Try again later.")
+        t(i18nKey(cfg, "error"), "Could not load content. Try again later."),
+        cfg.layout === "compact"
       );
     }
   }
