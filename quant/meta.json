@@ -1,0 +1,7 @@
+{
+  "rebalancing_study.pdf": {
+    "title": "Rebalancing Frequency and Portfolio Weights: AAPL / TSLA",
+    "date": "2026-10-20",
+    "summary": "A two-dimensional study of rebalancing schedules versus AAPL/TSLA weights on a frozen 2020–2025 sample. Weight dominates the risk profile; frequency changes the path and cost, but is not monotonic."
+  }
+}
