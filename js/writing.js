@@ -35,6 +35,7 @@
       fullListId: "notesFullList",
       navSelector: '[data-nav-collection="notes"]',
       layout: "compact",
+      groupByDate: true,
     },
     quant: {
       id: "quant",
