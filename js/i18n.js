@@ -284,6 +284,8 @@
       "footer.credit":
         'Built with <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> · Design system informed by <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
       "footer.updated": "Last updated: October 2026",
+      "footer.visitsBefore": "Visits",
+      "footer.visitsAfter": "",
       documentTitle: "Haowei Fan · Personal Homepage",
     },
 
@@ -554,6 +556,8 @@
       "footer.credit":
         '本页面由 <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> 生成 · 设计系统参考 <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
       "footer.updated": "最近更新：2026 年 10 月",
+      "footer.visitsBefore": "本站访问",
+      "footer.visitsAfter": "次",
       documentTitle: "樊浩玮 · 个人主页",
     },
 
@@ -824,6 +828,8 @@
       "footer.credit":
         '本頁面由 <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> 生成 · 設計系統參考 <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a>',
       "footer.updated": "最近更新：2026 年 10 月",
+      "footer.visitsBefore": "本站訪問",
+      "footer.visitsAfter": "次",
       documentTitle: "樊浩瑋 · 個人主頁",
     },
 
@@ -1106,6 +1112,8 @@
       "footer.credit":
         '<a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> で構築 · デザインは <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a> を参考',
       "footer.updated": "最終更新：2026年10月",
+      "footer.visitsBefore": "訪問",
+      "footer.visitsAfter": "回",
       documentTitle: "樊浩玮 · パーソナルホームページ",
     },
   };

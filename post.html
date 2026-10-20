@@ -83,13 +83,21 @@
         <p data-i18n="footer.copy">© 2026 Haowei Fan. All rights reserved.</p>
         <p class="footer-credit" data-i18n-html="footer.credit">Built with <a href="https://x.ai/grok" target="_blank" rel="noopener noreferrer">Grok Build</a> · Design system informed by <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer">ui-ux-pro-max</a></p>
       </div>
-      <p class="footer-meta" data-i18n="footer.updated">Last updated: October 2026</p>
+      <div class="footer-meta">
+        <p data-i18n="footer.updated">Last updated: October 2026</p>
+        <p class="footer-visits" hidden>
+          <span data-i18n="footer.visitsBefore">Visits</span>
+          <span data-visit-count></span>
+          <span data-i18n="footer.visitsAfter"></span>
+        </p>
+      </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/counter.js"></script>
   <script src="js/writing.js"></script>
 </body>
 </html>
